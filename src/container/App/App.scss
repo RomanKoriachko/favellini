@@ -1,0 +1,9 @@
+@use "reset.scss";
+
+* {
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+}

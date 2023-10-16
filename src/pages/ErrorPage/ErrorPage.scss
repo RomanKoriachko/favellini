@@ -1,0 +1,19 @@
+.error-page {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 100vh;
+    .error-message-title {
+        font-size: 60px;
+        line-height: 70px;
+    }
+    .error-message-subtitle {
+        font-size: 32px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .error-message-text {
+        font-size: 27px;
+    }
+}
