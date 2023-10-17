@@ -6,6 +6,8 @@
 body {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
+    background: #f9f5ef;
+    color: #333333;
 }
 
 .container {
@@ -23,6 +25,7 @@ body {
     font-weight: 400;
     line-height: 64px;
     letter-spacing: -2px;
+    text-transform: uppercase;
 }
 .subtitle {
     font-family: "Allison", cursive;
@@ -30,11 +33,23 @@ body {
     font-weight: 400;
     line-height: 32px;
     letter-spacing: 0px;
+    color: #41a195;
+}
+
+// ------------- Laptop -------------
+@media (max-width: 1200px) {
+    .title {
+        font-size: 64px;
+    }
 }
 
 // ------------- Mobile -------------
 @media (max-width: 576px) {
     .container {
         padding: 0px 16px;
+    }
+    .title {
+        font-size: 32px;
+        line-height: 32px;
     }
 }
