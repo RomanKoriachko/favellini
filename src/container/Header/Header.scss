@@ -1,0 +1,28 @@
+.header {
+    position: absolute;
+    width: 100%;
+    padding: 25px 0px;
+    z-index: 10;
+    .header-wrapper {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        .header-logo {
+            position: absolute;
+        }
+        .header-menu-wrapper {
+            justify-self: center;
+            gap: 80px;
+            .header-menu-item {
+                font-size: 16px;
+                line-height: 32px;
+                letter-spacing: 0px;
+                text-transform: uppercase;
+                text-decoration: none;
+                cursor: pointer;
+                color: white;
+            }
+        }
+    }
+}

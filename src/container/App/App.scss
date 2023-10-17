@@ -3,7 +3,31 @@
 * {
     box-sizing: border-box;
 }
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
 
+.container {
+    max-width: 1440px;
+    padding: 0px 80px;
+    margin: 0 auto;
+}
 .row {
     display: flex;
+}
+
+.title {
+    font-family: "Lora", serif;
+    font-size: 76px;
+    font-weight: 400;
+    line-height: 64px;
+    letter-spacing: -2px;
+}
+.subtitle {
+    font-family: "Allison", cursive;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0px;
 }
