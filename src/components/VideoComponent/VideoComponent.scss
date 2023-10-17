@@ -29,6 +29,7 @@
             url(../../assets/video-section-logo.png);
         background-repeat: no-repeat;
         background-position: center;
+        background-size: contain;
     }
     .video-section-logo-text {
         position: absolute;
@@ -57,4 +58,31 @@
         background-repeat: no-repeat;
         cursor: pointer;
     }
+}
+
+// ---------------- Disable hover on mobile -------------
+
+// @media (hover: hover) {
+
+// }
+
+// ------------- Adaptive -------------
+
+// ------------- Laptop -------------
+// @media (max-width: 1200px) {
+
+// }
+
+// ------------- Tablet -------------
+@media (max-width: 992px) {
+    .video-section {
+        .video-section-logo {
+            width: 80%;
+            height: 100%;
+        }
+    }
+}
+
+// ------------- Mobile -------------
+@media (max-width: 576px) {
 }

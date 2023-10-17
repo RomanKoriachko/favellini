@@ -26,3 +26,36 @@
         }
     }
 }
+
+// ---------------- Disable hover on mobile -------------
+
+// @media (hover: hover) {
+
+// }
+
+// ------------- Adaptive -------------
+
+// ------------- Laptop -------------
+// @media (max-width: 1200px) {
+
+// }
+
+// ------------- Tablet -------------
+@media (max-width: 992px) {
+    .header {
+        .header-wrapper {
+            .header-logo {
+                display: none;
+            }
+            .header-menu-wrapper {
+                flex-direction: column;
+                align-items: center;
+                gap: 24px;
+            }
+        }
+    }
+}
+
+// ------------- Mobile -------------
+@media (max-width: 576px) {
+}
