@@ -1,4 +1,5 @@
 import AboutComponent from "../../components/AboutComponent/AboutComponent";
+import ExploreComponent from "../../components/ExploreComponent/ExploreComponent";
 import VideoComponent from "../../components/VideoComponent/VideoComponent";
 import "./Main.scss";
 
@@ -9,6 +10,7 @@ const Main = (props: Props) => {
         <main className="main">
             <VideoComponent />
             <AboutComponent />
+            <ExploreComponent />
         </main>
     );
 };

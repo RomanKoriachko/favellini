@@ -36,9 +36,7 @@
         position: absolute;
         right: 135px;
         bottom: -50px;
-    }
-    .about-section-btn-link-tablet {
-        display: none;
+        z-index: 30;
     }
     .about-section-btn {
         width: 170px;
@@ -54,6 +52,7 @@
         letter-spacing: 0px;
         text-align: center;
         text-transform: uppercase;
+        cursor: pointer;
     }
     .images-wrapper {
         position: relative;
