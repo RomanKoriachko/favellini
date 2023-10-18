@@ -1,5 +1,22 @@
 .collection-page {
+    background-color: white;
     .header-bg {
         height: 80px;
+    }
+    .collection-wrapper {
+        display: grid;
+        grid-template-columns: 280px 880px;
+        gap: 20px;
+        padding-bottom: 80px;
+        .filter {
+            width: 100%;
+            height: 500px;
+            background: #fafafa;
+        }
+        .items-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 32px 20px;
+        }
     }
 }

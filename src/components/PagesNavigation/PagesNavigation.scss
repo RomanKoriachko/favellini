@@ -1,0 +1,14 @@
+.pages {
+    gap: 8px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    .page-text {
+        text-decoration: none;
+        color: #979cab;
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .current-pages {
+        color: #333333;
+    }
+}

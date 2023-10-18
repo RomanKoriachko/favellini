@@ -1,0 +1,23 @@
+.item {
+    .img-wrapper {
+        width: 280px;
+        height: 300px;
+    }
+    .item-img {
+        width: 100%;
+    }
+    .description-row {
+        margin-top: 10px;
+        justify-content: space-between;
+        font-size: 16px;
+        line-height: 19px;
+        text-transform: capitalize;
+        .item-type {
+            color: #979cab;
+            margin-top: 5px;
+        }
+        .price {
+            text-transform: lowercase;
+        }
+    }
+}
