@@ -1,0 +1,118 @@
+.footer {
+    background: #144c45;
+    color: #8acfcf;
+    padding-top: 95px;
+    padding-bottom: 22px;
+    .footer-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 400px;
+        align-items: end;
+        gap: 100px;
+        margin-bottom: 48px;
+    }
+    .footer-subtitle {
+        font-family: "Dancing Script", cursive;
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 32px;
+        letter-spacing: 0px;
+        margin-bottom: 36px;
+    }
+    .footer-title {
+        font-family: "Lora", serif;
+        font-size: 40px;
+        font-weight: 400;
+        line-height: 40px;
+        letter-spacing: -2px;
+        color: #ffffff;
+        margin-bottom: 16px;
+    }
+    .footer-text {
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 26px;
+        letter-spacing: 0px;
+        margin-bottom: 44px;
+        > span {
+            font-weight: 700;
+            color: white;
+        }
+    }
+    .footer-btn {
+        width: 48px;
+        height: 48px;
+        border: none;
+        border-radius: 50%;
+        background-color: #41a195;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+    .facebook-btn {
+        background-image: url(../../assets/facebook.svg);
+        background-size: 20%;
+        margin-right: 12px;
+    }
+    .instagram-btn {
+        background-image: url(../../assets/instagram.svg);
+        background-size: 30%;
+    }
+    .form {
+        .form-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            .form-input {
+                border: none;
+                border-radius: 4px;
+                background: #22625a;
+                padding: 12px 17px;
+                outline: none;
+                color: white;
+                font-family: "Roboto", sans-serif;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 16px;
+                letter-spacing: 0em;
+                width: 100%;
+                &::placeholder {
+                    color: #144c45;
+                    font-family: "Roboto", sans-serif;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 16px;
+                    letter-spacing: 0em;
+                }
+            }
+            .form-email {
+                margin-bottom: 16px;
+            }
+            .form-message {
+                margin-bottom: 24px;
+                resize: none;
+                min-height: 115px;
+            }
+            .form-btn {
+                font-family: "Lora", serif;
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 20px;
+                letter-spacing: 0em;
+
+                width: 100px;
+                border: none;
+                border-radius: 4px;
+                box-shadow: 3px 4px 6px 0px #2799a44d;
+                cursor: pointer;
+                padding: 5px 31px;
+            }
+        }
+    }
+    .copyright {
+        text-align: center;
+        color: #ffffff;
+        padding-top: 24px;
+        border-top: 1px solid #ffffff;
+    }
+}
