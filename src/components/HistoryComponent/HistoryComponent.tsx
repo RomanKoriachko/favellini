@@ -5,7 +5,7 @@ type Props = {};
 const HistoryComponent = (props: Props) => {
     return (
         <section className="history-section">
-            <div className="container">
+            <div className="small-container">
                 <p className="subtitle">Our History</p>
                 <p className="title">Roberto Favellini</p>
                 <p className="text">

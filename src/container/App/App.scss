@@ -15,6 +15,11 @@ body {
     padding: 0px 80px;
     margin: 0 auto;
 }
+.small-container {
+    max-width: 1284px;
+    padding: 0px 110px;
+    margin: 0 auto;
+}
 .row {
     display: flex;
 }
@@ -52,6 +57,9 @@ body {
 // ------------- Mobile -------------
 @media (max-width: 576px) {
     .container {
+        padding: 0px 16px;
+    }
+    .small-container {
         padding: 0px 16px;
     }
     .title {

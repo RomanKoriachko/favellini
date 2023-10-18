@@ -31,32 +31,35 @@ const InnovationComponent = (props: Props) => {
                         </p>
                     </div>
                 </div>
-                <div className="row innovation-content-row right-side-row">
-                    <div>
-                        <p className="title">Legacy</p>
-                        <p className="text">
-                            As Roberto Favellini introduced his Symphony Of
-                            Nature alongside the Soft & Silky, Cooling,
-                            Lightweight, and Breathable bedding sets to the
-                            world, a transformation in the way people
-                            experienced sleep ensued, ushering in a realm of
-                            unparalleled luxury and repose.
-                        </p>
-                        <p className="text">
-                            Favellini’s legacy transcends the world of fashion.
-                            It has become an experience—an indulgence that
-                            elevates nightly slumber to an art form. Roberto’s
-                            dream has materialized, and the world has been
-                            indelibly transformed by his visionary luxury.
-                        </p>
+                <div className="small-container">
+                    <div className="row innovation-content-row right-side-row">
+                        <div>
+                            <p className="title">Legacy</p>
+                            <p className="text">
+                                As Roberto Favellini introduced his Symphony Of
+                                Nature alongside the Soft & Silky, Cooling,
+                                Lightweight, and Breathable bedding sets to the
+                                world, a transformation in the way people
+                                experienced sleep ensued, ushering in a realm of
+                                unparalleled luxury and repose.
+                            </p>
+                            <p className="text">
+                                Favellini’s legacy transcends the world of
+                                fashion. It has become an experience—an
+                                indulgence that elevates nightly slumber to an
+                                art form. Roberto’s dream has materialized, and
+                                the world has been indelibly transformed by his
+                                visionary luxury.
+                            </p>
+                        </div>
+                        <img src="images/innovation-img-2.jpg" alt="" />
+                        <Link
+                            className="innovation-section-btn-link"
+                            to={"collection"}
+                        >
+                            <SeeMoreButton />
+                        </Link>
                     </div>
-                    <img src="images/innovation-img-2.jpg" alt="" />
-                    <Link
-                        className="innovation-section-btn-link"
-                        to={"collection"}
-                    >
-                        <SeeMoreButton />
-                    </Link>
                 </div>
             </div>
         </section>

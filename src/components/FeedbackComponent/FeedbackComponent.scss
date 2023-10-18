@@ -1,4 +1,28 @@
 .feedback-section {
-    height: 500px;
     background: #8acfcf;
+    padding-top: 70px;
+    padding-bottom: 20px;
+    .quote-img {
+        width: 120px;
+        height: 90px;
+        background-image: url(../../assets/quote-img.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-bottom: 50px;
+    }
+    .subtitle {
+        color: white;
+        margin-bottom: 36px;
+    }
+    .title {
+        margin-bottom: 46px;
+    }
+    .white-dot {
+        width: 8px;
+        height: 8px;
+        background-color: white;
+        border-radius: 50%;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
 }
