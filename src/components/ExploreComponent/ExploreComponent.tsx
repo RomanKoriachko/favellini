@@ -41,9 +41,6 @@ const ExploreComponent = (props: Props) => {
                             classText="explore-section-item explore-section-link"
                             text="our store"
                         />
-                        {/* <div className="explore-section-item explore-section-link">
-                            our store
-                        </div> */}
                     </a>
                 </div>
             </div>

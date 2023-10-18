@@ -1,3 +1,4 @@
+import { AnimationOnScroll } from "react-animation-on-scroll";
 import SeeMoreButton from "../SeeMoreButton/SeeMoreButton";
 import "./AboutComponent.scss";
 import { Link } from "react-router-dom";
@@ -30,28 +31,35 @@ const AboutComponent = (props: Props) => {
                     <SeeMoreButton />
                 </Link>
             </div>
-            <div className="images-wrapper">
-                <img
-                    className="about-img img-1"
-                    src="images/about-section-img-1.jpg"
-                    alt=""
-                />
-                <img
-                    className="about-img img-2"
-                    src="images/about-section-img-2.jpg"
-                    alt=""
-                />
-                <img
-                    className="about-img img-3"
-                    src="images/about-section-img-3.jpg"
-                    alt=""
-                />
-                <img
-                    className="about-img img-4"
-                    src="images/about-section-img-4.jpg"
-                    alt=""
-                />
-            </div>
+            <AnimationOnScroll
+                animateIn="animate__fadeInUp"
+                animateOut="animate__fadeOut"
+                duration={2}
+                animateOnce
+            >
+                <div className="images-wrapper">
+                    <img
+                        className="about-img img-1"
+                        src="images/about-section-img-1.jpg"
+                        alt=""
+                    />
+                    <img
+                        className="about-img img-2"
+                        src="images/about-section-img-2.jpg"
+                        alt=""
+                    />
+                    <img
+                        className="about-img img-3"
+                        src="images/about-section-img-3.jpg"
+                        alt=""
+                    />
+                    <img
+                        className="about-img img-4"
+                        src="images/about-section-img-4.jpg"
+                        alt=""
+                    />
+                </div>
+            </AnimationOnScroll>
             <div className="container">
                 <div className="row description-wrapper">
                     <div className="description-leftside-wrapper">

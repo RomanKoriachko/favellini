@@ -1,4 +1,5 @@
 import "./FeedbackComponent.scss";
+import { AnimationOnScroll } from "react-animation-on-scroll";
 import Marquee from "react-fast-marquee";
 
 type Props = {};
@@ -6,11 +7,18 @@ type Props = {};
 const FeedbackComponent = (props: Props) => {
     return (
         <section className="feedback-section">
-            <div className="small-container">
-                <div className="quote-img"></div>
-                <p className="subtitle">Feedback Comments</p>
-                <p className="title">for Favellini bedding sets</p>
-            </div>
+            <AnimationOnScroll
+                animateIn="animate__fadeIn"
+                animateOut="animate__fadeOut"
+                duration={2}
+                animateOnce
+            >
+                <div className="small-container">
+                    <div className="quote-img"></div>
+                    <p className="subtitle">Feedback Comments</p>
+                    <p className="title">for Favellini bedding sets</p>
+                </div>
+            </AnimationOnScroll>
             <Marquee className="marquee" autoFill={true} speed={30}>
                 <p>
                     “Absolutely love my Favellini bedding! It feels like
