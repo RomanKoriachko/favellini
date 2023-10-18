@@ -1,0 +1,40 @@
+.innovation-section {
+    padding-top: 87px;
+    margin-bottom: -150px;
+    background: white;
+    .subtitle {
+        margin-bottom: 36px;
+    }
+    .title {
+        margin-bottom: 8px;
+    }
+    .title-1,
+    .title-3 {
+        margin-left: 107px;
+    }
+    .title-3 {
+        margin-bottom: 32px;
+    }
+    .text {
+        color: #979cab;
+    }
+    .innovation-content-row {
+        gap: 40px;
+        align-items: center;
+        .title {
+            margin-bottom: 40px;
+        }
+        .text {
+            margin-bottom: 30px;
+        }
+    }
+    .right-side-row {
+        position: relative;
+        margin-right: 110px;
+        .innovation-section-btn-link {
+            position: absolute;
+            top: -85px;
+            right: -85px;
+        }
+    }
+}

@@ -1,3 +1,4 @@
+import SeeMoreButton from "../SeeMoreButton/SeeMoreButton";
 import "./AboutComponent.scss";
 import { Link } from "react-router-dom";
 
@@ -26,10 +27,7 @@ const AboutComponent = (props: Props) => {
                     </p>
                 </div>
                 <Link className="about-section-btn-link" to={"collection"}>
-                    <button className="about-section-btn">
-                        <p>See</p>
-                        <p>More</p>
-                    </button>
+                    <SeeMoreButton />
                 </Link>
             </div>
             <div className="images-wrapper">
