@@ -62,9 +62,16 @@
 
 // ---------------- Disable hover on mobile -------------
 
-// @media (hover: hover) {
-
-// }
+@media (hover: hover) {
+    .video-section {
+        .video-section-btn {
+            transition: 0.3s ease-in-out all;
+            &:hover {
+                top: 81%;
+            }
+        }
+    }
+}
 
 // ------------- Adaptive -------------
 

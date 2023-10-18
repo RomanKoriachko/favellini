@@ -1,8 +1,11 @@
+import AnimatedButton from "../AnimatedButton/AnimatedButton";
+import useBoop from "../UseBoop/UseBoop";
 import "./ExploreComponent.scss";
 
 type Props = {};
 
 const ExploreComponent = (props: Props) => {
+    const [style, trigger] = useBoop({ x: 10 });
     return (
         <section className="explore-section">
             <div className="container">
@@ -31,10 +34,16 @@ const ExploreComponent = (props: Props) => {
                         <div className="item-img"></div>
                         <p className="item-name">light green king size</p>
                     </div>
-                    <a href="">
-                        <div className="explore-section-item explore-section-link">
+                    <a href="" className="store-link">
+                        <AnimatedButton
+                            style={style}
+                            trigger={trigger}
+                            classText="explore-section-item explore-section-link"
+                            text="our store"
+                        />
+                        {/* <div className="explore-section-item explore-section-link">
                             our store
-                        </div>
+                        </div> */}
                     </a>
                 </div>
             </div>

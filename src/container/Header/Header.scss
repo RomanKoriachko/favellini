@@ -29,9 +29,22 @@
 
 // ---------------- Disable hover on mobile -------------
 
-// @media (hover: hover) {
-
-// }
+@media (hover: hover) {
+    .header {
+        .header-wrapper {
+            .header-menu-wrapper {
+                .header-menu-item {
+                    transition: 0.3s all;
+                    &:hover {
+                        text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff,
+                            0 0 42px #f9f5ef, 0 0 82px #f9f5ef, 0 0 92px #f9f5ef,
+                            0 0 102px #f9f5ef, 0 0 151px #f9f5ef;
+                    }
+                }
+            }
+        }
+    }
+}
 
 // ------------- Adaptive -------------
 

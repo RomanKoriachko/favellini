@@ -4,6 +4,13 @@ import videoBg from "../../assets/videoBg.m4v";
 type Props = {};
 
 const VideoComponent = (props: Props) => {
+    const windowHeight = window.innerHeight;
+    const scrollDownBtnClick = () => {
+        window.scrollTo({
+            top: windowHeight,
+            behavior: "smooth",
+        });
+    };
     return (
         <section className="video-section">
             <video
@@ -18,7 +25,10 @@ const VideoComponent = (props: Props) => {
             <div className="video-section-bg"></div>
             <div className="video-section-logo"></div>
             <p className="video-section-logo-text">Symphony Of Nature</p>
-            <button className="video-section-btn"></button>
+            <button
+                className="video-section-btn"
+                onClick={scrollDownBtnClick}
+            ></button>
         </section>
     );
 };

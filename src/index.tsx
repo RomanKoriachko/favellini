@@ -24,10 +24,6 @@ const router = createBrowserRouter([
             },
         ],
     },
-    {
-        path: "/collection",
-        element: <CollectionPage />,
-    },
 ]);
 
 const root = ReactDOM.createRoot(

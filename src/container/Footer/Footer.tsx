@@ -9,7 +9,7 @@ const Footer = (props: Props) => {
     const [styleInst, triggerInst] = useBoop({ rotation: 20 });
     const [styleForm, triggerForm] = useBoop({ scale: 1.1 });
     return (
-        <footer className="footer">
+        <footer className="footer" id="contacts">
             <div className="small-container">
                 <div className="footer-wrapper">
                     <div>

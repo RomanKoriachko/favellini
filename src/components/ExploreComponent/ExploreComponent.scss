@@ -15,8 +15,12 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 40px;
-        > a {
+        .store-link {
             text-decoration: none;
+            height: fit-content;
+            > button {
+                cursor: pointer;
+            }
         }
         .explore-section-item {
             height: 100%;
