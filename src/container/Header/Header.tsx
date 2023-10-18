@@ -30,17 +30,9 @@ const Header = (props: Props) => {
                         <Link className="header-menu-item" to={"collection"}>
                             collection
                         </Link>
-                        <LinkNav
-                            className="header-link"
-                            to="history"
-                            smooth={true}
-                            duration={500}
-                        >
+                        <LinkNav to="history" smooth={true} duration={500}>
                             <div className="header-menu-item">Our History</div>
                         </LinkNav>
-                        <Link to="/" className="pages-header-menu-item">
-                            <div className="header-menu-item">Our History</div>
-                        </Link>
                         <LinkNav to="contacts" smooth={true} duration={500}>
                             <div className="header-menu-item">Contact Us</div>
                         </LinkNav>

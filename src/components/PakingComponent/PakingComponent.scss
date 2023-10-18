@@ -1,12 +1,12 @@
 .paking-section {
-    background: #8acfcf;
+    background: #f9f5ef;
     padding-top: 96px;
 
     .small-container {
         position: relative;
     }
     .subtitle {
-        color: white;
+        color: #144c45;
         margin-bottom: 36px;
     }
     .title {
@@ -17,13 +17,14 @@
     }
     .paking-img-1 {
         margin-top: 60px;
-        margin-left: 141px;
+        margin-left: 120px;
+        width: 580px;
         margin-bottom: -3px;
     }
     .paking-img-2 {
         position: absolute;
         height: 588px;
-        top: -95px;
+        top: -96px;
         right: 0px;
     }
 }

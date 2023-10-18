@@ -3,6 +3,7 @@ import PagesNavigation from "../../components/PagesNavigation/PagesNavigation";
 import PakingComponent from "../../components/PakingComponent/PakingComponent";
 import itemsArray from "./itemsArray";
 import "./CollectionPage.scss";
+import HistoryComponent from "../../components/HistoryComponent/HistoryComponent";
 
 type Props = {};
 
@@ -30,6 +31,7 @@ const CollectionPage = (props: Props) => {
                         </div>
                     </div>
                 </div>
+                <HistoryComponent />
                 <PakingComponent />
             </div>
         </main>
