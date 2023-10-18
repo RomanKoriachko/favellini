@@ -1,8 +1,13 @@
 import "./Footer.scss";
+import useBoop from "../../components/UseBoop/UseBoop";
+import AnimatedButton from "../../components/AnimatedButton/AnimatedButton";
 
 type Props = {};
 
 const Footer = (props: Props) => {
+    const [styleFb, triggerFb] = useBoop({ rotation: 20 });
+    const [styleInst, triggerInst] = useBoop({ rotation: 20 });
+    const [styleForm, triggerForm] = useBoop({ scale: 1.1 });
     return (
         <footer className="footer">
             <div className="small-container">
@@ -15,12 +20,30 @@ const Footer = (props: Props) => {
                             our team at <span>pr@favellini.com</span> or fill
                             out the form
                         </p>
-                        <div>
-                            <button className="footer-btn facebook-btn"></button>
-                            <button className="footer-btn instagram-btn"></button>
+                        <div className="row">
+                            <div className="footer-btn facebook-btn">
+                                <AnimatedButton
+                                    classText="footer-btn facebook-btn"
+                                    style={styleFb}
+                                    trigger={triggerFb}
+                                    text=""
+                                />
+                            </div>
+                            <div className="footer-btn instagram-btn">
+                                <AnimatedButton
+                                    classText="footer-btn instagram-btn"
+                                    style={styleInst}
+                                    trigger={triggerInst}
+                                    text=""
+                                />
+                            </div>
                         </div>
                     </div>
-                    <form className="form" action="">
+                    <form
+                        className="form"
+                        action="https://formsubmit.co/romankoriachko@gmail.com"
+                        method="POST"
+                    >
                         <div className="form-wrapper">
                             <input
                                 className="form-input form-email"
@@ -35,7 +58,12 @@ const Footer = (props: Props) => {
                                 id="message"
                                 placeholder="Write your Message"
                             ></textarea>
-                            <button className="form-btn">Send</button>
+                            <AnimatedButton
+                                classText="form-btn"
+                                style={styleForm}
+                                trigger={triggerForm}
+                                text="Send"
+                            />
                         </div>
                     </form>
                 </div>

@@ -11,7 +11,7 @@ const FeedbackComponent = (props: Props) => {
                 <p className="subtitle">Feedback Comments</p>
                 <p className="title">for Favellini bedding sets</p>
             </div>
-            <Marquee autoFill={true} speed={30}>
+            <Marquee className="marquee" autoFill={true} speed={30}>
                 <p>
                     “Absolutely love my Favellini bedding! It feels like
                     sleeping on a cloud.”
