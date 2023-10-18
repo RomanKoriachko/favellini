@@ -7,6 +7,7 @@ import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import CollectionPage from "./pages/CollectionPage/CollectionPage";
 import Main from "./container/Main/Main";
 import App from "./container/App/App";
+import ItemPage from "./pages/ItemPage/ItemPage";
 
 const router = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
             {
                 element: <CollectionPage />,
                 path: "/collection",
+            },
+            {
+                element: <ItemPage />,
+                path: "/collection/:color",
             },
         ],
     },
