@@ -1,5 +1,6 @@
 import AboutComponent from "../../components/AboutComponent/AboutComponent";
 import ExploreComponent from "../../components/ExploreComponent/ExploreComponent";
+import HistoryComponent from "../../components/HistoryComponent/HistoryComponent";
 import VideoComponent from "../../components/VideoComponent/VideoComponent";
 import "./Main.scss";
 
@@ -11,6 +12,7 @@ const Main = (props: Props) => {
             <VideoComponent />
             <AboutComponent />
             <ExploreComponent />
+            <HistoryComponent />
         </main>
     );
 };
