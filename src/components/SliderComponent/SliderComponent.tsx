@@ -6,7 +6,7 @@ import "./SliderComponent.scss";
 
 type Props = {};
 
-type ItemType = {
+export type ItemType = {
     id: number;
     type: string;
     size: string;

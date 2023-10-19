@@ -16,12 +16,12 @@ const PakingComponent = (props: Props) => {
                 </p>
                 <img
                     className="paking-img-1"
-                    src="images/innovation-img-1.jpg"
+                    src="/images/innovation-img-1.jpg"
                     alt=""
                 />
                 <img
                     className="paking-img-2"
-                    src="images/innovation-img-2.jpg"
+                    src="/images/innovation-img-2.jpg"
                     alt=""
                 />
             </div>

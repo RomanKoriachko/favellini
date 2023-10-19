@@ -46,6 +46,7 @@ const Footer = (props: Props) => {
                     >
                         <div className="form-wrapper">
                             <input
+                                required
                                 className="form-input form-email"
                                 type="email"
                                 id="email"
@@ -53,6 +54,7 @@ const Footer = (props: Props) => {
                                 placeholder="Write your email"
                             />
                             <textarea
+                                required
                                 className="form-input form-message"
                                 name="message"
                                 id="message"

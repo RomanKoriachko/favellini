@@ -33,7 +33,7 @@ const HistoryComponent = (props: Props) => {
                     <div className="history-img-wrapper">
                         <img
                             className="history-img"
-                            src="images/history-section-img.jpg"
+                            src="/images/history-section-img.jpg"
                             alt=""
                         />
                     </div>
