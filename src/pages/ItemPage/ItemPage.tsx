@@ -3,6 +3,7 @@ import "./ItemPage.scss";
 import HistoryComponent from "../../components/HistoryComponent/HistoryComponent";
 import PagesNavigation from "../../components/PagesNavigation/PagesNavigation";
 import itemsArray from "../CollectionPage/itemsArray";
+import SliderComponent from "../../components/SliderComponent/SliderComponent";
 
 type Props = {};
 
@@ -20,6 +21,10 @@ const ItemPage = (props: Props) => {
                 <div className="header-bg"></div>
                 <div className="container">
                     <PagesNavigation />
+                    <div className="row item-content-wrapper">
+                        <SliderComponent />
+                        <div></div>
+                    </div>
                 </div>
                 <HistoryComponent />
             </div>

@@ -1,0 +1,57 @@
+.sliders {
+    width: 50%;
+    margin-bottom: 100px;
+    .first-slider {
+        .first-slider-item {
+            height: 450px;
+            width: 100%;
+            object-fit: cover;
+        }
+        .slick-prev:before,
+        .slick-next:before {
+            content: "";
+        }
+        .slick-next,
+        .slick-prev {
+            top: 116%;
+            width: 24px;
+            height: 24px;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .slick-prev {
+            background-image: url(../../assets/arrow-left.svg);
+            left: -5px;
+        }
+        .slick-next {
+            background-image: url(../../assets/arrow-right.svg);
+            right: -5px;
+        }
+        .slick-dots {
+            bottom: -165px;
+            li {
+                button:before {
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+    .second-slider {
+        height: 110px;
+        margin: 20px auto 0px;
+        width: 90%;
+        .slick-track {
+            text-align: center;
+        }
+        .second-slider-item {
+            cursor: pointer;
+            max-width: 180px;
+            > img {
+                height: 110px;
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+}

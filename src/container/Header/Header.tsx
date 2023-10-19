@@ -22,7 +22,7 @@ const Header = (props: Props) => {
                     <Link to="/">
                         <img
                             className="header-logo"
-                            src={`images/${headerLogo}`}
+                            src={`/images/${headerLogo}`}
                             alt=""
                         />
                     </Link>

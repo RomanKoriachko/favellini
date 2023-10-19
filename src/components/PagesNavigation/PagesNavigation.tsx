@@ -45,7 +45,7 @@ const PagesNavigation = (props: Props) => {
                         className={`page-text ${curentPageClass.currentItem}`}
                         to={`/collection/${color}`}
                     >
-                        <p>{color}</p>
+                        <p>{currentItem.type}</p>
                     </Link>
                 </>
             ) : undefined}
