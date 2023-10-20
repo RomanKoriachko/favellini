@@ -10,6 +10,8 @@ let itemsArray = [
         img2: "white-2.jpg",
         img3: "white-3.jpg",
         img4: "white-4.jpg",
+        popularity: 17,
+        inStock: true,
     },
     {
         id: 2,
@@ -22,6 +24,8 @@ let itemsArray = [
         img2: "silver-gray-2.jpg",
         img3: "silver-gray-3.jpg",
         img4: "silver-gray-4.jpg",
+        popularity: 14,
+        inStock: true,
     },
     {
         id: 3,
@@ -34,6 +38,8 @@ let itemsArray = [
         img2: "light-green-2.jpg",
         img3: "light-green-3.jpg",
         img4: "light-green-4.jpg",
+        popularity: 11,
+        inStock: true,
     },
     {
         id: 4,
@@ -46,6 +52,8 @@ let itemsArray = [
         img2: "light-pink-2.jpg",
         img3: "light-pink-3.jpg",
         img4: "light-pink-4.jpg",
+        popularity: 16,
+        inStock: true,
     },
     {
         id: 5,
@@ -58,6 +66,8 @@ let itemsArray = [
         img2: "shell-2.jpg",
         img3: "shell-3.jpg",
         img4: "shell-4.jpg",
+        popularity: 13,
+        inStock: true,
     },
     {
         id: 6,
@@ -70,6 +80,8 @@ let itemsArray = [
         img2: "skin-color-2.jpg",
         img3: "skin-color-3.jpg",
         img4: "skin-color-4.jpg",
+        popularity: 10,
+        inStock: true,
     },
     {
         id: 7,
@@ -82,6 +94,8 @@ let itemsArray = [
         img2: "young-pink-2.jpg",
         img3: "young-pink-3.jpg",
         img4: "young-pink-4.jpg",
+        popularity: 15,
+        inStock: true,
     },
     {
         id: 8,
@@ -94,6 +108,8 @@ let itemsArray = [
         img2: "forest-2.jpg",
         img3: "forest-3.jpg",
         img4: "forest-4.jpg",
+        popularity: 12,
+        inStock: true,
     },
     {
         id: 9,
@@ -106,6 +122,8 @@ let itemsArray = [
         img2: "rose-pink-2.jpg",
         img3: "rose-pink-3.jpg",
         img4: "rose-pink-4.jpg",
+        popularity: 9,
+        inStock: true,
     },
     {
         id: 10,
@@ -118,6 +136,8 @@ let itemsArray = [
         img2: "young-blue-2.jpg",
         img3: "young-blue-3.jpg",
         img4: "young-blue-4.jpg",
+        popularity: 8,
+        inStock: true,
     },
     {
         id: 11,
@@ -130,6 +150,8 @@ let itemsArray = [
         img2: "sage-2.jpg",
         img3: "sage-3.jpg",
         img4: "sage-4.jpg",
+        popularity: 6,
+        inStock: true,
     },
     {
         id: 12,
@@ -142,6 +164,8 @@ let itemsArray = [
         img2: "orange-2.jpg",
         img3: "orange-3.jpg",
         img4: "orange-4.jpg",
+        popularity: 3,
+        inStock: true,
     },
     {
         id: 13,
@@ -154,6 +178,8 @@ let itemsArray = [
         img2: "earh-brown-2.jpg",
         img3: "earh-brown-3.jpg",
         img4: "earh-brown-4.jpg",
+        popularity: 8,
+        inStock: true,
     },
     {
         id: 14,
@@ -166,6 +192,8 @@ let itemsArray = [
         img2: "charming-blue-2.jpg",
         img3: "charming-blue-3.jpg",
         img4: "charming-blue-4.jpg",
+        popularity: 5,
+        inStock: true,
     },
     {
         id: 15,
@@ -178,6 +206,8 @@ let itemsArray = [
         img2: "steel-gray-2.jpg",
         img3: "steel-gray-3.jpg",
         img4: "steel-gray-4.jpg",
+        popularity: 2,
+        inStock: true,
     },
     {
         id: 16,
@@ -190,6 +220,8 @@ let itemsArray = [
         img2: "dark-grey-2.jpg",
         img3: "dark-grey-3.jpg",
         img4: "dark-grey-4.jpg",
+        popularity: 7,
+        inStock: true,
     },
     {
         id: 17,
@@ -202,6 +234,22 @@ let itemsArray = [
         img2: "charcoal-grey-2.jpg",
         img3: "charcoal-grey-3.jpg",
         img4: "charcoal-grey-4.jpg",
+        popularity: 4,
+        inStock: true,
+    },
+    {
+        id: 18,
+        type: "begging set",
+        size: "king, queen",
+        color: "Grey Stripe",
+        queensPrice: 249,
+        kingsPrice: 299,
+        img1: "charcoal-grey-1.jpg",
+        img2: "charcoal-grey-2.jpg",
+        img3: "charcoal-grey-3.jpg",
+        img4: "charcoal-grey-4.jpg",
+        popularity: 1,
+        inStock: true,
     },
 ];
 
