@@ -18,7 +18,8 @@ const ItemPage = (props: Props) => {
     let currentItem: ItemType = {
         id: 0,
         type: "",
-        size: "",
+        kingSize: false,
+        queenSize: false,
         color: "",
         queensPrice: 0,
         kingsPrice: 0,

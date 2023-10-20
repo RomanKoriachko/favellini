@@ -56,6 +56,7 @@
         display: grid;
         grid-template-columns: 280px 880px;
         gap: 20px;
+        align-items: start;
         padding-bottom: 80px;
         .filter {
             width: 100%;
@@ -116,6 +117,20 @@
                 }
                 .margin {
                     height: 20px;
+                }
+                .selected-filter-row {
+                    gap: 10px;
+                    align-items: center;
+                    margin-left: -4px;
+                    margin-top: 20px;
+                    .delite-img {
+                        width: 24px;
+                        height: 24px;
+                        background-image: url(../../assets/delite-btn.svg);
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        cursor: pointer;
+                    }
                 }
                 .checkbox-wrapper {
                     .checkbox-row:first-child {

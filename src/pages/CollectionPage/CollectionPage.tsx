@@ -7,6 +7,7 @@ import HistoryComponent from "../../components/HistoryComponent/HistoryComponent
 import { useState, useEffect } from "react";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
+import { ItemType } from "../../components/SliderComponent/SliderComponent";
 
 type Props = {};
 
@@ -41,8 +42,8 @@ const CollectionPage = (props: Props) => {
 
     // Price component
 
-    const [minPrice, setMinPrice] = useState(0);
-    const [maxPrice, setMaxPrice] = useState(3000);
+    const [minPrice, setMinPrice] = useState<number>(0);
+    const [maxPrice, setMaxPrice] = useState<number>(3000);
 
     function log(value: number | number[]) {
         if (typeof value === "object") {
@@ -57,7 +58,7 @@ const CollectionPage = (props: Props) => {
 
     // Sorting
 
-    const [itemsObject, setItemsObject] = useState(itemsArray);
+    const [itemsArrState, setItemsArrState] = useState(itemsArray);
     const [sortingTitleState, setSortingTitleState] =
         useState<string>("Default");
 
@@ -75,8 +76,8 @@ const CollectionPage = (props: Props) => {
         field: keyof (typeof itemsArray)[0],
         ascending = true
     ) => {
-        const availableItems = itemsObject.filter((item) => item.inStock);
-        const unavailableItems = itemsObject.filter((item) => !item.inStock);
+        const availableItems = itemsArrState.filter((item) => item.inStock);
+        const unavailableItems = itemsArrState.filter((item) => !item.inStock);
 
         const sortedAvailableItems = sortByField(
             availableItems,
@@ -94,7 +95,7 @@ const CollectionPage = (props: Props) => {
             ...sortedUnavailableItems,
         ];
 
-        setItemsObject(sortedItems);
+        setItemsArrState(sortedItems);
     };
 
     useEffect(() => {
@@ -128,7 +129,47 @@ const CollectionPage = (props: Props) => {
         setSortingState("");
     };
 
-    // console.log(sortByField(itemsArray, "queensPrice", false));
+    // ------------------ Filters -----------------------
+
+    const [queenChecked, setQueenChecked] = useState(false);
+    const [kingChecked, setKingChecked] = useState(false);
+
+    const handleQueenCheckboxChange = (
+        event: React.ChangeEvent<HTMLInputElement>
+    ) => {
+        setQueenChecked(event.target.checked);
+    };
+
+    const handleKingCheckboxChange = (
+        event: React.ChangeEvent<HTMLInputElement>
+    ) => {
+        setKingChecked(event.target.checked);
+    };
+
+    const handleApplyFilters = () => {
+        let filteredItems = itemsArray.filter((item) => item.inStock);
+
+        // Фільтр за ціною (queensPrice)
+        if (minPrice !== 0 || maxPrice !== 3000) {
+            filteredItems = filteredItems.filter((item) => {
+                return (
+                    item.queensPrice >= minPrice && item.queensPrice <= maxPrice
+                );
+            });
+        }
+
+        // Фільтр за розміром (queenSize та kingSize)
+        if (queenChecked || kingChecked) {
+            filteredItems = filteredItems.filter((item) => {
+                return (
+                    (queenChecked && item.queenSize) ||
+                    (kingChecked && item.kingSize)
+                );
+            });
+        }
+
+        setItemsArrState(filteredItems);
+    };
 
     return (
         <main className="main">
@@ -212,8 +253,12 @@ const CollectionPage = (props: Props) => {
                                     Accessories <span>SOON</span>
                                 </p>
                             </div>
-                            <div className="filter-block categories-filter">
+                            <div className="filter-block selected-filter">
                                 <p className="filter-block-title">Selected</p>
+                                <div className="row selected-filter-row">
+                                    <div className="delite-img"></div>
+                                    <p>Clear all filters</p>
+                                </div>
                             </div>
                             <div className="filter-block size-filter">
                                 <div
@@ -235,6 +280,10 @@ const CollectionPage = (props: Props) => {
                                                 className="checkbox"
                                                 type="checkbox"
                                                 id="queen"
+                                                checked={queenChecked}
+                                                onChange={
+                                                    handleQueenCheckboxChange
+                                                }
                                             />
                                             <label htmlFor="queen">Queen</label>
                                         </div>
@@ -243,11 +292,18 @@ const CollectionPage = (props: Props) => {
                                                 className="checkbox"
                                                 type="checkbox"
                                                 id="king"
+                                                checked={kingChecked}
+                                                onChange={
+                                                    handleKingCheckboxChange
+                                                }
                                             />
                                             <label htmlFor="king">King</label>
                                         </div>
                                     </div>
-                                    <button className="filter-btn">
+                                    <button
+                                        className="filter-btn"
+                                        onClick={handleApplyFilters}
+                                    >
                                         Apply
                                     </button>
                                 </div>
@@ -446,7 +502,7 @@ const CollectionPage = (props: Props) => {
                                     className="row filter-title-row"
                                     onClick={changePriceMenuState}
                                 >
-                                    <p className="filter-block-title">Size</p>
+                                    <p className="filter-block-title">Price</p>
                                     <div
                                         className={`arrow ${priceMenuState}`}
                                     ></div>
@@ -509,7 +565,7 @@ const CollectionPage = (props: Props) => {
                                                 <input
                                                     className="price-input"
                                                     type="text"
-                                                    maxLength={4}
+                                                    maxLength={5}
                                                     value={maxPrice}
                                                     onChange={(e) => {
                                                         const newMaxPrice =
@@ -518,20 +574,78 @@ const CollectionPage = (props: Props) => {
                                                                 10
                                                             );
                                                         if (
-                                                            !isNaN(
-                                                                newMaxPrice
-                                                            ) &&
-                                                            newMaxPrice >
-                                                                minPrice
+                                                            !isNaN(newMaxPrice)
                                                         ) {
                                                             setMaxPrice(
                                                                 newMaxPrice
                                                             );
                                                         }
                                                     }}
+                                                    onKeyDown={(e) => {
+                                                        if (
+                                                            e.key ===
+                                                            "Backspace"
+                                                        ) {
+                                                            if (maxPrice > 0) {
+                                                                e.preventDefault();
+                                                                const newMaxPrice =
+                                                                    Math.floor(
+                                                                        maxPrice /
+                                                                            10
+                                                                    );
+                                                                setMaxPrice(
+                                                                    Math.max(
+                                                                        0,
+                                                                        newMaxPrice
+                                                                    )
+                                                                );
+                                                            }
+                                                        } else if (
+                                                            e.key.length ===
+                                                                1 &&
+                                                            !/^\d+$/.test(e.key)
+                                                        ) {
+                                                            e.preventDefault();
+                                                            const newValue =
+                                                                maxPrice
+                                                                    .toString()
+                                                                    .slice(
+                                                                        0,
+                                                                        -1
+                                                                    ) +
+                                                                "0" +
+                                                                e.key;
+                                                            setMaxPrice(
+                                                                parseInt(
+                                                                    newValue,
+                                                                    10
+                                                                )
+                                                            );
+                                                            const input =
+                                                                e.target as HTMLInputElement;
+                                                            const caretPos =
+                                                                input.selectionStart;
+                                                            if (
+                                                                caretPos !==
+                                                                null
+                                                            ) {
+                                                                input.setSelectionRange(
+                                                                    caretPos,
+                                                                    caretPos + 1
+                                                                );
+                                                            }
+                                                        }
+                                                    }}
                                                     onBlur={() => {
                                                         if (maxPrice > 3000) {
                                                             setMaxPrice(3000);
+                                                        }
+                                                        if (
+                                                            maxPrice < minPrice
+                                                        ) {
+                                                            setMaxPrice(
+                                                                minPrice
+                                                            );
                                                         }
                                                     }}
                                                 />
@@ -548,14 +662,17 @@ const CollectionPage = (props: Props) => {
                                             />
                                         </div>
                                     </div>
-                                    <button className="filter-btn">
+                                    <button
+                                        className="filter-btn"
+                                        onClick={handleApplyFilters}
+                                    >
                                         Apply
                                     </button>
                                 </div>
                             </div>
                         </div>
                         <div className="items-wrapper">
-                            {itemsObject.map(
+                            {itemsArrState.map(
                                 ({
                                     id,
                                     type,

@@ -9,7 +9,8 @@ type Props = {};
 export type ItemType = {
     id: number;
     type: string;
-    size: string;
+    kingSize: boolean;
+    queenSize: boolean;
     color: string;
     queensPrice: number;
     kingsPrice: number;
@@ -24,7 +25,8 @@ const SliderComponent = (props: Props) => {
     let currentItem: ItemType = {
         id: 0,
         type: "",
-        size: "",
+        kingSize: false,
+        queenSize: false,
         color: "",
         queensPrice: 0,
         kingsPrice: 0,
