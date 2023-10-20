@@ -30,6 +30,7 @@
             top: 38px;
             right: 0px;
             padding: 20px;
+            padding-bottom: 0;
             border: 1px solid #979cab;
             background-color: white;
             visibility: hidden;
@@ -39,8 +40,11 @@
                 color: #808080;
                 cursor: pointer;
             }
-            > p:last-child {
-                margin-bottom: 0;
+            // > p:last-child {
+            //     margin-bottom: 0;
+            // }
+            .disable {
+                display: none;
             }
         }
         .sorting-list.open {

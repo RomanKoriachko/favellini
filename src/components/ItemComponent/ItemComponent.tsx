@@ -6,11 +6,12 @@ type Props = {
     color: string;
     queensPrice: number;
     img1: string;
+    inStock: boolean;
 };
 
-const ItemComponent = ({ type, color, queensPrice, img1 }: Props) => {
+const ItemComponent = ({ type, color, queensPrice, img1, inStock }: Props) => {
     return (
-        <div className="item">
+        <div className={`item ${inStock ? "" : "out-of-stock"}`}>
             <Link to={`/collection/${color}`}>
                 <div className="img-wrapper">
                     <img className="item-img" src={`images/${img1}`} alt="" />
@@ -23,7 +24,11 @@ const ItemComponent = ({ type, color, queensPrice, img1 }: Props) => {
                     </Link>
                     <p className="item-type">{type}</p>
                 </div>
-                <div className="price">from {queensPrice}€</div>
+                {inStock ? (
+                    <div className="price">from {queensPrice}€</div>
+                ) : (
+                    <div className="price out-of-stock">Out of stock</div>
+                )}
             </div>
         </div>
     );

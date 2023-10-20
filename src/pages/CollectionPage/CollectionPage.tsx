@@ -4,7 +4,7 @@ import PakingComponent from "../../components/PakingComponent/PakingComponent";
 import itemsArray from "./itemsArray";
 import "./CollectionPage.scss";
 import HistoryComponent from "../../components/HistoryComponent/HistoryComponent";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 
@@ -39,7 +39,7 @@ const CollectionPage = (props: Props) => {
             : setPriceMenuState("");
     };
 
-    // Price filter
+    // Price component
 
     const [minPrice, setMinPrice] = useState(0);
     const [maxPrice, setMaxPrice] = useState(3000);
@@ -55,6 +55,81 @@ const CollectionPage = (props: Props) => {
         }
     }
 
+    // Sorting
+
+    const [itemsObject, setItemsObject] = useState(itemsArray);
+    const [sortingTitleState, setSortingTitleState] =
+        useState<string>("Default");
+
+    function sortByField<T>(array: T[], field: keyof T, ascending = true): T[] {
+        return [...array].sort((a, b) => {
+            if (ascending) {
+                return (a[field] as any) - (b[field] as any);
+            } else {
+                return (b[field] as any) - (a[field] as any);
+            }
+        });
+    }
+
+    const handleSortByField = (
+        field: keyof (typeof itemsArray)[0],
+        ascending = true
+    ) => {
+        const availableItems = itemsObject.filter((item) => item.inStock);
+        const unavailableItems = itemsObject.filter((item) => !item.inStock);
+
+        const sortedAvailableItems = sortByField(
+            availableItems,
+            field,
+            ascending
+        );
+        const sortedUnavailableItems = sortByField(
+            unavailableItems,
+            field,
+            ascending
+        );
+
+        const sortedItems = [
+            ...sortedAvailableItems,
+            ...sortedUnavailableItems,
+        ];
+
+        setItemsObject(sortedItems);
+    };
+
+    useEffect(() => {
+        handleSortByField("inStock", false);
+        // eslint-disable-next-line
+    }, []);
+
+    const sortByLowerPrice = () => {
+        handleSortByField("queensPrice", true);
+        setSortingTitleState("From cheap to expensive");
+        setSortingState("");
+    };
+    const sortByHighestPrice = () => {
+        handleSortByField("queensPrice", false);
+        setSortingTitleState("From expensive to cheap");
+        setSortingState("");
+    };
+    const sortByPopularity = () => {
+        handleSortByField("popularity", false);
+        setSortingTitleState("By popularity");
+        setSortingState("");
+    };
+    const sortByStock = () => {
+        handleSortByField("inStock", false);
+        setSortingTitleState("In stock");
+        setSortingState("");
+    };
+    const sortByDefault = () => {
+        handleSortByField("id", true);
+        setSortingTitleState("Default");
+        setSortingState("");
+    };
+
+    // console.log(sortByField(itemsArray, "queensPrice", false));
+
     return (
         <main className="main">
             <div className="collection-page">
@@ -66,14 +141,62 @@ const CollectionPage = (props: Props) => {
                             className="row sorting-row"
                             onClick={openSortingList}
                         >
-                            <p>Sorting: defauilt</p>
+                            <p>Sorting: {sortingTitleState}</p>
                             <div className={`arrow ${sortingState}`}></div>
                         </div>
                         <div className={`sorting-list ${sortingState}`}>
-                            <p>From expensive to cheap</p>
-                            <p>From cheap to expensive</p>
-                            <p>By popularity</p>
-                            <p>In stock</p>
+                            <p
+                                className={`${
+                                    sortingTitleState ===
+                                    "From expensive to cheap"
+                                        ? "disable"
+                                        : ""
+                                }`}
+                                onClick={sortByHighestPrice}
+                            >
+                                From expensive to cheap
+                            </p>
+                            <p
+                                className={`${
+                                    sortingTitleState ===
+                                    "From cheap to expensive"
+                                        ? "disable"
+                                        : ""
+                                }`}
+                                onClick={sortByLowerPrice}
+                            >
+                                From cheap to expensive
+                            </p>
+                            <p
+                                className={`${
+                                    sortingTitleState === "By popularity"
+                                        ? "disable"
+                                        : ""
+                                }`}
+                                onClick={sortByPopularity}
+                            >
+                                By popularity
+                            </p>
+                            <p
+                                className={`${
+                                    sortingTitleState === "In stock"
+                                        ? "disable"
+                                        : ""
+                                }`}
+                                onClick={sortByStock}
+                            >
+                                In stock
+                            </p>
+                            <p
+                                className={`${
+                                    sortingTitleState === "Default"
+                                        ? "disable"
+                                        : ""
+                                }`}
+                                onClick={sortByDefault}
+                            >
+                                Default
+                            </p>
                         </div>
                     </div>
                     <div className="collection-wrapper">
@@ -432,14 +555,22 @@ const CollectionPage = (props: Props) => {
                             </div>
                         </div>
                         <div className="items-wrapper">
-                            {itemsArray.map(
-                                ({ id, type, color, queensPrice, img1 }) => (
+                            {itemsObject.map(
+                                ({
+                                    id,
+                                    type,
+                                    color,
+                                    queensPrice,
+                                    img1,
+                                    inStock,
+                                }) => (
                                     <ItemComponent
                                         key={id}
                                         type={type}
                                         color={color}
                                         queensPrice={queensPrice}
                                         img1={img1}
+                                        inStock={inStock}
                                     />
                                 )
                             )}

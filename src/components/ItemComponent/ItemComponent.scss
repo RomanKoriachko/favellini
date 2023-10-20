@@ -24,5 +24,13 @@
         .price {
             text-transform: lowercase;
         }
+        .price.out-of-stock {
+            text-transform: capitalize;
+        }
+    }
+}
+.out-of-stock {
+    .item-img {
+        filter: grayscale(100%);
     }
 }
