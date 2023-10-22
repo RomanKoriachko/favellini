@@ -334,6 +334,8 @@ const CollectionPage = (props: Props) => {
             });
         }
 
+        // console.log(filteredItems);
+
         setItemsArrState(filteredItems);
     };
 
@@ -355,8 +357,29 @@ const CollectionPage = (props: Props) => {
         setYellowChecked(false);
         setMinPrice(0);
         setMaxPrice(3000);
-        // handleApplyFilters();
+
+        let filteredItems = itemsArray;
+        if (sortingTitleState === "From cheap to expensive") {
+            filteredItems.sort((a, b) => {
+                return (a["queensPrice"] as any) - (b["queensPrice"] as any);
+            });
+            setItemsArrState(itemsArray);
+        } else if (sortingTitleState === "From expensive to cheap") {
+            filteredItems.sort((a, b) => {
+                return (b["queensPrice"] as any) - (a["queensPrice"] as any);
+            });
+            setItemsArrState(itemsArray);
+        } else if (sortingTitleState === "By popularity") {
+            filteredItems.sort((a, b) => {
+                return (b["popularity"] as any) - (a["popularity"] as any);
+            });
+            setItemsArrState(itemsArray);
+        } else {
+            setItemsArrState(itemsArray);
+        }
     };
+
+    // console.log(itemsArrState);
 
     return (
         <main className="main">
