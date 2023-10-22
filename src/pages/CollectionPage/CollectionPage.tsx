@@ -7,7 +7,6 @@ import HistoryComponent from "../../components/HistoryComponent/HistoryComponent
 import { useState, useEffect } from "react";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
-import { ItemType } from "../../components/SliderComponent/SliderComponent";
 
 type Props = {};
 
@@ -134,16 +133,89 @@ const CollectionPage = (props: Props) => {
     const [queenChecked, setQueenChecked] = useState(false);
     const [kingChecked, setKingChecked] = useState(false);
 
+    const [whiteChecked, setWhiteChecked] = useState(false);
+    const [blackChecked, setBlackChecked] = useState(false);
+    const [blueChecked, setBlueChecked] = useState(false);
+    const [brownChecked, setBrownChecked] = useState(false);
+    const [greenChecked, setGreenChecked] = useState(false);
+    const [grayChecked, setGrayChecked] = useState(false);
+    const [orangeChecked, setOrangeChecked] = useState(false);
+    const [beigeChecked, setBeigeChecked] = useState(false);
+    const [violetChecked, setVioletChecked] = useState(false);
+    const [bordeauxChecked, setBordeauChecked] = useState(false);
+    const [pinkChecked, setPinkChecked] = useState(false);
+    const [yellowChecked, setYellowChecked] = useState(false);
+
     const handleQueenCheckboxChange = (
         event: React.ChangeEvent<HTMLInputElement>
     ) => {
         setQueenChecked(event.target.checked);
     };
-
     const handleKingCheckboxChange = (
         event: React.ChangeEvent<HTMLInputElement>
     ) => {
         setKingChecked(event.target.checked);
+    };
+
+    const handleWhiteCheckboxChange = (
+        event: React.ChangeEvent<HTMLInputElement>
+    ) => {
+        setWhiteChecked(event.target.checked);
+    };
+    const handleBlackCheckboxChange = (
+        event: React.ChangeEvent<HTMLInputElement>
+    ) => {
+        setBlackChecked(event.target.checked);
+    };
+    const handleBlueCheckboxChange = (
+        event: React.ChangeEvent<HTMLInputElement>
+    ) => {
+        setBlueChecked(event.target.checked);
+    };
+    const handleBrownnCheckboxChange = (
+        event: React.ChangeEvent<HTMLInputElement>
+    ) => {
+        setBrownChecked(event.target.checked);
+    };
+    const handleGreenCheckboxChange = (
+        event: React.ChangeEvent<HTMLInputElement>
+    ) => {
+        setGreenChecked(event.target.checked);
+    };
+    const handleGrayCheckboxChange = (
+        event: React.ChangeEvent<HTMLInputElement>
+    ) => {
+        setGrayChecked(event.target.checked);
+    };
+    const handleOrangeCheckboxChange = (
+        event: React.ChangeEvent<HTMLInputElement>
+    ) => {
+        setOrangeChecked(event.target.checked);
+    };
+    const handleBeigeCheckboxChange = (
+        event: React.ChangeEvent<HTMLInputElement>
+    ) => {
+        setBeigeChecked(event.target.checked);
+    };
+    const handleVioletCheckboxChange = (
+        event: React.ChangeEvent<HTMLInputElement>
+    ) => {
+        setVioletChecked(event.target.checked);
+    };
+    const handleBordeauxCheckboxChange = (
+        event: React.ChangeEvent<HTMLInputElement>
+    ) => {
+        setBordeauChecked(event.target.checked);
+    };
+    const handlePinkCheckboxChange = (
+        event: React.ChangeEvent<HTMLInputElement>
+    ) => {
+        setPinkChecked(event.target.checked);
+    };
+    const handleYellowCheckboxChange = (
+        event: React.ChangeEvent<HTMLInputElement>
+    ) => {
+        setYellowChecked(event.target.checked);
     };
 
     const handleApplyFilters = () => {
@@ -164,6 +236,58 @@ const CollectionPage = (props: Props) => {
                 return (
                     (queenChecked && item.queenSize) ||
                     (kingChecked && item.kingSize)
+                );
+            });
+        }
+
+        // Фільтр за кольором
+        if (
+            whiteChecked ||
+            blackChecked ||
+            blueChecked ||
+            brownChecked ||
+            greenChecked ||
+            grayChecked ||
+            orangeChecked ||
+            beigeChecked ||
+            violetChecked ||
+            bordeauxChecked ||
+            pinkChecked ||
+            yellowChecked
+        ) {
+            filteredItems = filteredItems.filter((item) => {
+                return (
+                    (whiteChecked &&
+                        (item.color === "white" ||
+                            item.color === "grey stripe")) ||
+                    (blackChecked && item.color === "charcoal gray") ||
+                    (blueChecked &&
+                        (item.color === "young blue" ||
+                            item.color === "charming blue")) ||
+                    (brownChecked &&
+                        (item.color === "skin color" ||
+                            item.color === "earth brown")) ||
+                    (greenChecked &&
+                        (item.color === "light green" ||
+                            item.color === "forest" ||
+                            item.color === "sage")) ||
+                    (grayChecked &&
+                        (item.color === "silver grey" ||
+                            item.color === "steel gray" ||
+                            item.color === "steel gray" ||
+                            item.color === "dark gray" ||
+                            item.color === "charcoal gray" ||
+                            item.color === "gray stripe")) ||
+                    (orangeChecked && item.color === "orange") ||
+                    (beigeChecked &&
+                        (item.color === "shell" ||
+                            item.color === "skin color")) ||
+                    (violetChecked && item.color === "violet") ||
+                    (bordeauxChecked && item.color === "bordeaux") ||
+                    (pinkChecked &&
+                        (item.color === "young pink" ||
+                            item.color === "rose pink" ||
+                            item.color === "light pink"))
                 );
             });
         }
@@ -328,6 +452,10 @@ const CollectionPage = (props: Props) => {
                                                 className="checkbox"
                                                 type="checkbox"
                                                 id="white"
+                                                checked={whiteChecked}
+                                                onChange={
+                                                    handleWhiteCheckboxChange
+                                                }
                                             />
                                             <label
                                                 className="row color-example-row"
@@ -342,6 +470,10 @@ const CollectionPage = (props: Props) => {
                                                 className="checkbox"
                                                 type="checkbox"
                                                 id="black"
+                                                checked={blackChecked}
+                                                onChange={
+                                                    handleBlackCheckboxChange
+                                                }
                                             />
                                             <label
                                                 className="row color-example-row"
@@ -356,6 +488,10 @@ const CollectionPage = (props: Props) => {
                                                 className="checkbox"
                                                 type="checkbox"
                                                 id="blue"
+                                                checked={blueChecked}
+                                                onChange={
+                                                    handleBlueCheckboxChange
+                                                }
                                             />
                                             <label
                                                 className="row color-example-row"
@@ -370,6 +506,10 @@ const CollectionPage = (props: Props) => {
                                                 className="checkbox"
                                                 type="checkbox"
                                                 id="brown"
+                                                checked={brownChecked}
+                                                onChange={
+                                                    handleBrownnCheckboxChange
+                                                }
                                             />
                                             <label
                                                 className="row color-example-row"
@@ -384,6 +524,10 @@ const CollectionPage = (props: Props) => {
                                                 className="checkbox"
                                                 type="checkbox"
                                                 id="green"
+                                                checked={greenChecked}
+                                                onChange={
+                                                    handleGreenCheckboxChange
+                                                }
                                             />
                                             <label
                                                 className="row color-example-row"
@@ -398,6 +542,10 @@ const CollectionPage = (props: Props) => {
                                                 className="checkbox"
                                                 type="checkbox"
                                                 id="Gray"
+                                                checked={grayChecked}
+                                                onChange={
+                                                    handleGrayCheckboxChange
+                                                }
                                             />
                                             <label
                                                 className="row color-example-row"
@@ -412,6 +560,10 @@ const CollectionPage = (props: Props) => {
                                                 className="checkbox"
                                                 type="checkbox"
                                                 id="orange"
+                                                checked={orangeChecked}
+                                                onChange={
+                                                    handleOrangeCheckboxChange
+                                                }
                                             />
                                             <label
                                                 className="row color-example-row"
@@ -426,6 +578,10 @@ const CollectionPage = (props: Props) => {
                                                 className="checkbox"
                                                 type="checkbox"
                                                 id="beige"
+                                                checked={beigeChecked}
+                                                onChange={
+                                                    handleBeigeCheckboxChange
+                                                }
                                             />
                                             <label
                                                 className="row color-example-row"
@@ -440,6 +596,10 @@ const CollectionPage = (props: Props) => {
                                                 className="checkbox"
                                                 type="checkbox"
                                                 id="violet"
+                                                checked={violetChecked}
+                                                onChange={
+                                                    handleVioletCheckboxChange
+                                                }
                                             />
                                             <label
                                                 className="row color-example-row"
@@ -454,6 +614,10 @@ const CollectionPage = (props: Props) => {
                                                 className="checkbox"
                                                 type="checkbox"
                                                 id="bordeaux"
+                                                checked={bordeauxChecked}
+                                                onChange={
+                                                    handleBordeauxCheckboxChange
+                                                }
                                             />
                                             <label
                                                 className="row color-example-row"
@@ -468,6 +632,10 @@ const CollectionPage = (props: Props) => {
                                                 className="checkbox"
                                                 type="checkbox"
                                                 id="pink"
+                                                checked={pinkChecked}
+                                                onChange={
+                                                    handlePinkCheckboxChange
+                                                }
                                             />
                                             <label
                                                 className="row color-example-row"
@@ -482,6 +650,10 @@ const CollectionPage = (props: Props) => {
                                                 className="checkbox"
                                                 type="checkbox"
                                                 id="yellow"
+                                                checked={yellowChecked}
+                                                onChange={
+                                                    handleYellowCheckboxChange
+                                                }
                                             />
                                             <label
                                                 className="row color-example-row"
@@ -492,7 +664,10 @@ const CollectionPage = (props: Props) => {
                                             </label>
                                         </div>
                                     </div>
-                                    <button className="filter-btn">
+                                    <button
+                                        className="filter-btn"
+                                        onClick={handleApplyFilters}
+                                    >
                                         Apply
                                     </button>
                                 </div>
