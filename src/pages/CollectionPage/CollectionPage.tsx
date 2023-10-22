@@ -135,7 +135,6 @@ const CollectionPage = (props: Props) => {
     const handleChangeCaterogy = (category: string) => {
         setCategoriesState(category);
         if (category !== "All goods") {
-            console.log(category.toLowerCase());
             const categoriesFiltred = itemsArrState.filter((item) => {
                 return item.type === category.toLowerCase();
             });
@@ -310,6 +309,26 @@ const CollectionPage = (props: Props) => {
         setItemsArrState(filteredItems);
     };
 
+    const onClearAllFiltersClick = () => {
+        handleChangeCaterogy("All goods");
+        setQueenChecked(false);
+        setKingChecked(false);
+        setWhiteChecked(false);
+        setBlackChecked(false);
+        setBlueChecked(false);
+        setBrownChecked(false);
+        setGreenChecked(false);
+        setGrayChecked(false);
+        setOrangeChecked(false);
+        setBeigeChecked(false);
+        setVioletChecked(false);
+        setBordeauChecked(false);
+        setPinkChecked(false);
+        setYellowChecked(false);
+        setMinPrice(0);
+        setMaxPrice(3000);
+    };
+
     return (
         <main className="main">
             <div className="collection-page">
@@ -416,7 +435,10 @@ const CollectionPage = (props: Props) => {
                             </div>
                             <div className="filter-block selected-filter">
                                 <p className="filter-block-title">Selected</p>
-                                <div className="row selected-filter-row">
+                                <div
+                                    className="row selected-filter-row clear-all-btn"
+                                    onClick={onClearAllFiltersClick}
+                                >
                                     <div className="delite-img"></div>
                                     <p>Clear all filters</p>
                                 </div>

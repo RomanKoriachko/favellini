@@ -135,6 +135,12 @@
                         cursor: pointer;
                     }
                 }
+                .clear-all-btn {
+                    > div,
+                    p {
+                        cursor: pointer;
+                    }
+                }
                 .checkbox-wrapper {
                     .checkbox-row:first-child {
                         margin-top: 0;
