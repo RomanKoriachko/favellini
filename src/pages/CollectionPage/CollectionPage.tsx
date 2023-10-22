@@ -130,8 +130,34 @@ const CollectionPage = (props: Props) => {
 
     // ------------------ Filters -----------------------
 
+    const [categoriesState, setCategoriesState] = useState("All goods");
+
+    const handleChangeCaterogy = (category: string) => {
+        setCategoriesState(category);
+        if (category !== "All goods") {
+            console.log(category.toLowerCase());
+            const categoriesFiltred = itemsArrState.filter((item) => {
+                return item.type === category.toLowerCase();
+            });
+            setItemsArrState(categoriesFiltred);
+        } else {
+            setItemsArrState(itemsArray);
+        }
+    };
+
     const [queenChecked, setQueenChecked] = useState(false);
     const [kingChecked, setKingChecked] = useState(false);
+
+    const handleQueenCheckboxChange = (
+        event: React.ChangeEvent<HTMLInputElement>
+    ) => {
+        setQueenChecked(event.target.checked);
+    };
+    const handleKingCheckboxChange = (
+        event: React.ChangeEvent<HTMLInputElement>
+    ) => {
+        setKingChecked(event.target.checked);
+    };
 
     const [whiteChecked, setWhiteChecked] = useState(false);
     const [blackChecked, setBlackChecked] = useState(false);
@@ -145,17 +171,6 @@ const CollectionPage = (props: Props) => {
     const [bordeauxChecked, setBordeauChecked] = useState(false);
     const [pinkChecked, setPinkChecked] = useState(false);
     const [yellowChecked, setYellowChecked] = useState(false);
-
-    const handleQueenCheckboxChange = (
-        event: React.ChangeEvent<HTMLInputElement>
-    ) => {
-        setQueenChecked(event.target.checked);
-    };
-    const handleKingCheckboxChange = (
-        event: React.ChangeEvent<HTMLInputElement>
-    ) => {
-        setKingChecked(event.target.checked);
-    };
 
     const handleWhiteCheckboxChange = (
         event: React.ChangeEvent<HTMLInputElement>
@@ -368,12 +383,34 @@ const CollectionPage = (props: Props) => {
                         <div className="filter">
                             <div className="filter-block categories-filter">
                                 <p className="filter-block-title">Categories</p>
-                                <p className="category">All goods</p>
-                                <p className="category">Bedding Set</p>
-                                <p className="disable-category category">
+                                <p
+                                    className={`category ${
+                                        categoriesState === "All goods"
+                                            ? "active"
+                                            : ""
+                                    }`}
+                                    onClick={() =>
+                                        handleChangeCaterogy("All goods")
+                                    }
+                                >
+                                    All goods
+                                </p>
+                                <p
+                                    className={`category ${
+                                        categoriesState === "Bedding Set"
+                                            ? "active"
+                                            : ""
+                                    }`}
+                                    onClick={() =>
+                                        handleChangeCaterogy("Bedding Set")
+                                    }
+                                >
+                                    Bedding Set
+                                </p>
+                                <p className="category disable-category">
                                     Robes <span>SOON</span>
                                 </p>
-                                <p className="disable-category category">
+                                <p className="category disable-category">
                                     Accessories <span>SOON</span>
                                 </p>
                             </div>

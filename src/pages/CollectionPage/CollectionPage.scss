@@ -76,6 +76,9 @@
                     user-select: none;
                     cursor: pointer;
                 }
+                .category.active {
+                    font-weight: 700;
+                }
                 .category:last-child {
                     margin-bottom: 0;
                 }

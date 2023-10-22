@@ -1,7 +1,7 @@
 let itemsArray = [
     {
         id: 1,
-        type: "begging set",
+        type: "bedding set",
         kingSize: false,
         queenSize: true,
         color: "white",
@@ -16,7 +16,7 @@ let itemsArray = [
     },
     {
         id: 2,
-        type: "begging set",
+        type: "bedding set",
         kingSize: true,
         queenSize: false,
         color: "silver grey",
@@ -31,7 +31,7 @@ let itemsArray = [
     },
     {
         id: 3,
-        type: "begging set",
+        type: "bedding set",
         kingSize: true,
         queenSize: false,
         color: "light green",
@@ -46,7 +46,7 @@ let itemsArray = [
     },
     {
         id: 4,
-        type: "begging set",
+        type: "bedding set",
         kingSize: true,
         queenSize: false,
         color: "light pink",
@@ -61,7 +61,7 @@ let itemsArray = [
     },
     {
         id: 5,
-        type: "begging set",
+        type: "bedding set",
         kingSize: false,
         queenSize: true,
         color: "shell",
@@ -76,7 +76,7 @@ let itemsArray = [
     },
     {
         id: 6,
-        type: "begging set",
+        type: "bedding set",
         kingSize: false,
         queenSize: true,
         color: "skin color",
@@ -91,7 +91,7 @@ let itemsArray = [
     },
     {
         id: 7,
-        type: "begging set",
+        type: "bedding set",
         kingSize: false,
         queenSize: true,
         color: "young pink",
@@ -106,7 +106,7 @@ let itemsArray = [
     },
     {
         id: 8,
-        type: "begging set",
+        type: "bedding set",
         kingSize: false,
         queenSize: true,
         color: "forest",
@@ -121,7 +121,7 @@ let itemsArray = [
     },
     {
         id: 9,
-        type: "begging set",
+        type: "bedding set",
         kingSize: false,
         queenSize: true,
         color: "rose pink",
@@ -136,7 +136,7 @@ let itemsArray = [
     },
     {
         id: 10,
-        type: "begging set",
+        type: "bedding set",
         kingSize: false,
         queenSize: true,
         color: "young blue",
@@ -151,7 +151,7 @@ let itemsArray = [
     },
     {
         id: 11,
-        type: "begging set",
+        type: "bedding set",
         kingSize: false,
         queenSize: true,
         color: "sage",
@@ -166,7 +166,7 @@ let itemsArray = [
     },
     {
         id: 12,
-        type: "begging set",
+        type: "bedding set",
         kingSize: true,
         queenSize: false,
         color: "orange",
@@ -181,7 +181,7 @@ let itemsArray = [
     },
     {
         id: 13,
-        type: "begging set",
+        type: "bedding set",
         kingSize: true,
         queenSize: true,
         color: "earth brown",
@@ -196,7 +196,7 @@ let itemsArray = [
     },
     {
         id: 14,
-        type: "begging set",
+        type: "sdf",
         kingSize: true,
         queenSize: true,
         color: "charming blue",
@@ -211,7 +211,7 @@ let itemsArray = [
     },
     {
         id: 15,
-        type: "begging set",
+        type: "sdf",
         kingSize: true,
         queenSize: true,
         color: "steel gray",
@@ -226,7 +226,7 @@ let itemsArray = [
     },
     {
         id: 16,
-        type: "begging set",
+        type: "sdf",
         kingSize: true,
         queenSize: true,
         color: "dark gray",
@@ -241,7 +241,7 @@ let itemsArray = [
     },
     {
         id: 17,
-        type: "begging set",
+        type: "sdf",
         kingSize: true,
         queenSize: true,
         color: "charcoal gray",
@@ -256,7 +256,7 @@ let itemsArray = [
     },
     {
         id: 18,
-        type: "begging set",
+        type: "sdf",
         kingSize: true,
         queenSize: true,
         color: "gray stripe",
