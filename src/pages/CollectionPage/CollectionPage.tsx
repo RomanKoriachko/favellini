@@ -138,9 +138,23 @@ const CollectionPage = (props: Props) => {
             const categoriesFiltred = itemsArrState.filter((item) => {
                 return item.type === category.toLowerCase();
             });
+            if (sortingTitleState === "From cheap to expensive") {
+                sortByLowerPrice();
+            } else if (sortingTitleState === "From expensive to cheap") {
+                sortByHighestPrice();
+            } else if (sortingTitleState === "By popularity") {
+                sortByPopularity();
+            }
             setItemsArrState(categoriesFiltred);
         } else {
             setItemsArrState(itemsArray);
+            if (sortingTitleState === "From cheap to expensive") {
+                sortByLowerPrice();
+            } else if (sortingTitleState === "From expensive to cheap") {
+                sortByHighestPrice();
+            } else if (sortingTitleState === "By popularity") {
+                sortByPopularity();
+            }
         }
     };
 
@@ -306,6 +320,20 @@ const CollectionPage = (props: Props) => {
             });
         }
 
+        if (sortingTitleState === "From cheap to expensive") {
+            filteredItems.sort((a, b) => {
+                return (a["queensPrice"] as any) - (b["queensPrice"] as any);
+            });
+        } else if (sortingTitleState === "From expensive to cheap") {
+            filteredItems.sort((a, b) => {
+                return (b["queensPrice"] as any) - (a["queensPrice"] as any);
+            });
+        } else if (sortingTitleState === "By popularity") {
+            filteredItems.sort((a, b) => {
+                return (b["popularity"] as any) - (a["popularity"] as any);
+            });
+        }
+
         setItemsArrState(filteredItems);
     };
 
@@ -327,6 +355,7 @@ const CollectionPage = (props: Props) => {
         setYellowChecked(false);
         setMinPrice(0);
         setMaxPrice(3000);
+        // handleApplyFilters();
     };
 
     return (
