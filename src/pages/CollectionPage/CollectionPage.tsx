@@ -246,17 +246,22 @@ const CollectionPage = (props: Props) => {
         setYellowChecked(event.target.checked);
     };
 
+    const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
+    console.log(selectedFilters);
+
+    const handleFilterToggle = (filterName: string, isActive: boolean) => {
+        if (isActive && !selectedFilters.includes(filterName)) {
+            setSelectedFilters((prevFilters) => [...prevFilters, filterName]);
+        }
+        if (!isActive) {
+            setSelectedFilters((prevFilters) =>
+                prevFilters.filter((filter) => filter !== filterName)
+            );
+        }
+    };
+
     const handleApplyFilters = () => {
         let filteredItems = itemsArray.filter((item) => item.inStock);
-
-        // Фільтр за ціною (queensPrice)
-        if (minPrice !== 0 || maxPrice !== 3000) {
-            filteredItems = filteredItems.filter((item) => {
-                return (
-                    item.queensPrice >= minPrice && item.queensPrice <= maxPrice
-                );
-            });
-        }
 
         // Фільтр за розміром (queenSize та kingSize)
         if (queenChecked || kingChecked) {
@@ -267,6 +272,8 @@ const CollectionPage = (props: Props) => {
                 );
             });
         }
+        handleFilterToggle("Queen", queenChecked);
+        handleFilterToggle("King", kingChecked);
 
         // Фільтр за кольором
         if (
@@ -316,6 +323,27 @@ const CollectionPage = (props: Props) => {
                         (item.color === "young pink" ||
                             item.color === "rose pink" ||
                             item.color === "light pink"))
+                );
+            });
+        }
+        handleFilterToggle("White", whiteChecked);
+        handleFilterToggle("Black", blackChecked);
+        handleFilterToggle("Blue", blueChecked);
+        handleFilterToggle("Brown", brownChecked);
+        handleFilterToggle("Green", greenChecked);
+        handleFilterToggle("Gray", grayChecked);
+        handleFilterToggle("Orange", orangeChecked);
+        handleFilterToggle("Beige", beigeChecked);
+        handleFilterToggle("Violet", violetChecked);
+        handleFilterToggle("Bordeaux", bordeauxChecked);
+        handleFilterToggle("Pink", pinkChecked);
+        handleFilterToggle("Yellow", yellowChecked);
+
+        // Фільтр за ціною (queensPrice)
+        if (minPrice !== 0 || maxPrice !== 3000) {
+            filteredItems = filteredItems.filter((item) => {
+                return (
+                    item.queensPrice >= minPrice && item.queensPrice <= maxPrice
                 );
             });
         }
@@ -379,7 +407,20 @@ const CollectionPage = (props: Props) => {
         }
     };
 
-    // console.log(itemsArrState);
+    const colorsObj = [
+        "White",
+        "Black",
+        "Blue",
+        "Brown",
+        "Green",
+        "Gray",
+        "Orange",
+        "Beige",
+        "Violet",
+        "Bordeaux",
+        "Pink",
+        "Yellow",
+    ];
 
     return (
         <main className="main">
@@ -494,6 +535,23 @@ const CollectionPage = (props: Props) => {
                                     <div className="delite-img"></div>
                                     <p>Clear all filters</p>
                                 </div>
+                                {selectedFilters.map((selectedFilter) => (
+                                    <div
+                                        key={selectedFilter}
+                                        className="row selected-filter-row"
+                                    >
+                                        <div className="delite-img"></div>
+                                        {colorsObj.map((color) =>
+                                            selectedFilter.includes(color) ? (
+                                                <div
+                                                    key={color}
+                                                    className={`color-example ${color.toLowerCase()}`}
+                                                ></div>
+                                            ) : undefined
+                                        )}
+                                        <p>{selectedFilter}</p>
+                                    </div>
+                                ))}
                             </div>
                             <div className="filter-block size-filter">
                                 <div

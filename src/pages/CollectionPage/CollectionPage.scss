@@ -157,48 +157,6 @@
                         .color-example-row {
                             align-items: center;
                         }
-                        .color-example {
-                            width: 24px;
-                            height: 24px;
-                            border-radius: 50%;
-                            margin-right: 10px;
-                        }
-                        .white {
-                            background-color: white;
-                        }
-                        .black {
-                            background-color: black;
-                        }
-                        .blue {
-                            background-color: #5d7bc8;
-                        }
-                        .brown {
-                            background-color: #6a363c;
-                        }
-                        .green {
-                            background-color: #629742;
-                        }
-                        .gray {
-                            background-color: #9b9b9b;
-                        }
-                        .orange {
-                            background-color: #db8a11;
-                        }
-                        .beige {
-                            background-color: #e4cc8c;
-                        }
-                        .violet {
-                            background-color: #9e7374;
-                        }
-                        .bordeaux {
-                            background-color: #9e2b38;
-                        }
-                        .pink {
-                            background-color: #d761e1;
-                        }
-                        .yellow {
-                            background-color: #e0d813;
-                        }
                     }
                     .checkbox {
                         -webkit-appearance: none;
@@ -254,6 +212,48 @@
                     border: none;
                     padding: 13px 0px;
                     cursor: pointer;
+                }
+                .color-example {
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 50%;
+                    margin-right: 10px;
+                }
+                .white {
+                    background-color: white;
+                }
+                .black {
+                    background-color: black;
+                }
+                .blue {
+                    background-color: #5d7bc8;
+                }
+                .brown {
+                    background-color: #6a363c;
+                }
+                .green {
+                    background-color: #629742;
+                }
+                .gray {
+                    background-color: #9b9b9b;
+                }
+                .orange {
+                    background-color: #db8a11;
+                }
+                .beige {
+                    background-color: #e4cc8c;
+                }
+                .violet {
+                    background-color: #9e7374;
+                }
+                .bordeaux {
+                    background-color: #9e2b38;
+                }
+                .pink {
+                    background-color: #d761e1;
+                }
+                .yellow {
+                    background-color: #e0d813;
                 }
             }
         }
