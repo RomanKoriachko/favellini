@@ -8,7 +8,6 @@ import { useState, useEffect } from "react";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import StickyBox from "react-sticky-box";
-import { any } from "prop-types";
 
 type Props = {};
 
@@ -43,35 +42,32 @@ const CollectionPage = (props: Props) => {
 
     // Sorting
 
+    const [itemsArrState, setItemsArrState] = useState(itemsArray);
+
     useEffect(() => {
-        const handleSortByStock = () => {
-            let availableItems = itemsArrState.filter((item) => item.inStock);
-            let unavailableItems = itemsArrState.filter(
-                (item) => !item.inStock
-            );
+        let availableItems = itemsArrState.filter((item) => item.inStock);
+        let unavailableItems = itemsArrState.filter((item) => !item.inStock);
 
-            const sortedAvailableItems = sortByField(
-                availableItems,
-                "inStock",
-                false
-            );
-            const sortedUnavailableItems = sortByField(
-                unavailableItems,
-                "inStock",
-                false
-            );
+        const sortedAvailableItems = sortByField(
+            availableItems,
+            "inStock",
+            false
+        );
+        const sortedUnavailableItems = sortByField(
+            unavailableItems,
+            "inStock",
+            false
+        );
 
-            const sortedItems = [
-                ...sortedAvailableItems,
-                ...sortedUnavailableItems,
-            ];
+        const sortedItems = [
+            ...sortedAvailableItems,
+            ...sortedUnavailableItems,
+        ];
 
-            setItemsArrState(sortedItems);
-        };
-        handleSortByStock();
+        setItemsArrState(sortedItems);
+        // eslint-disable-next-line
     }, []);
 
-    const [itemsArrState, setItemsArrState] = useState(itemsArray);
     const [sortingTitleState, setSortingTitleState] =
         useState<string>("Default");
 
@@ -415,6 +411,7 @@ const CollectionPage = (props: Props) => {
 
     useEffect(() => {
         filtrationBody();
+        // eslint-disable-next-line
     }, [
         queenChecked,
         kingChecked,
@@ -526,6 +523,11 @@ const CollectionPage = (props: Props) => {
         setMaxPrice(localMaxPrice);
 
         filtrationBody();
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth", // Додавання цього параметра робить прокрутку плавною (підтримується в сучасних браузерах)
+        });
     };
 
     const onClearAllFiltersClick = () => {
