@@ -39,22 +39,6 @@ const CollectionPage = (props: Props) => {
             : setPriceMenuState("");
     };
 
-    // Price component
-
-    const [minPrice, setMinPrice] = useState<number>(0);
-    const [maxPrice, setMaxPrice] = useState<number>(3000);
-
-    function log(value: number | number[]) {
-        if (typeof value === "object") {
-            if (!isNaN(value[0]) && value[0] <= value[1]) {
-                setMinPrice(value[0]);
-            }
-            if (!isNaN(value[1]) && value[1] >= value[0]) {
-                setMaxPrice(value[1]);
-            }
-        }
-    }
-
     // Sorting
 
     const [itemsArrState, setItemsArrState] = useState(itemsArray);
@@ -160,16 +144,18 @@ const CollectionPage = (props: Props) => {
 
     const [queenChecked, setQueenChecked] = useState(false);
     const [kingChecked, setKingChecked] = useState(false);
+    const [localQueenChecked, setLocalQueenChecked] = useState(false);
+    const [localKingChecked, setLocalKingChecked] = useState(false);
 
     const handleQueenCheckboxChange = (
         event: React.ChangeEvent<HTMLInputElement>
     ) => {
-        setQueenChecked(event.target.checked);
+        setLocalQueenChecked(event.target.checked);
     };
     const handleKingCheckboxChange = (
         event: React.ChangeEvent<HTMLInputElement>
     ) => {
-        setKingChecked(event.target.checked);
+        setLocalKingChecked(event.target.checked);
     };
 
     const [whiteChecked, setWhiteChecked] = useState(false);
@@ -185,69 +171,99 @@ const CollectionPage = (props: Props) => {
     const [pinkChecked, setPinkChecked] = useState(false);
     const [yellowChecked, setYellowChecked] = useState(false);
 
+    const [localWhiteChecked, setLocalWhiteChecked] = useState(false);
+    const [localBlackChecked, setLocalBlackChecked] = useState(false);
+    const [localBlueChecked, setLocalBlueChecked] = useState(false);
+    const [localBrownChecked, setLocalBrownChecked] = useState(false);
+    const [localGreenChecked, setLocalGreenChecked] = useState(false);
+    const [localGrayChecked, setLocalGrayChecked] = useState(false);
+    const [localOrangeChecked, setLocalOrangeChecked] = useState(false);
+    const [localBeigeChecked, setLocalBeigeChecked] = useState(false);
+    const [localVioletChecked, setLocalVioletChecked] = useState(false);
+    const [localBordeauxChecked, setLocalBordeauChecked] = useState(false);
+    const [localPinkChecked, setLocalPinkChecked] = useState(false);
+    const [localYellowChecked, setLocalYellowChecked] = useState(false);
+
     const handleWhiteCheckboxChange = (
         event: React.ChangeEvent<HTMLInputElement>
     ) => {
-        setWhiteChecked(event.target.checked);
+        setLocalWhiteChecked(event.target.checked);
     };
     const handleBlackCheckboxChange = (
         event: React.ChangeEvent<HTMLInputElement>
     ) => {
-        setBlackChecked(event.target.checked);
+        setLocalBlackChecked(event.target.checked);
     };
     const handleBlueCheckboxChange = (
         event: React.ChangeEvent<HTMLInputElement>
     ) => {
-        setBlueChecked(event.target.checked);
+        setLocalBlueChecked(event.target.checked);
     };
     const handleBrownnCheckboxChange = (
         event: React.ChangeEvent<HTMLInputElement>
     ) => {
-        setBrownChecked(event.target.checked);
+        setLocalBrownChecked(event.target.checked);
     };
     const handleGreenCheckboxChange = (
         event: React.ChangeEvent<HTMLInputElement>
     ) => {
-        setGreenChecked(event.target.checked);
+        setLocalGreenChecked(event.target.checked);
     };
     const handleGrayCheckboxChange = (
         event: React.ChangeEvent<HTMLInputElement>
     ) => {
-        setGrayChecked(event.target.checked);
+        setLocalGrayChecked(event.target.checked);
     };
     const handleOrangeCheckboxChange = (
         event: React.ChangeEvent<HTMLInputElement>
     ) => {
-        setOrangeChecked(event.target.checked);
+        setLocalOrangeChecked(event.target.checked);
     };
     const handleBeigeCheckboxChange = (
         event: React.ChangeEvent<HTMLInputElement>
     ) => {
-        setBeigeChecked(event.target.checked);
+        setLocalBeigeChecked(event.target.checked);
     };
     const handleVioletCheckboxChange = (
         event: React.ChangeEvent<HTMLInputElement>
     ) => {
-        setVioletChecked(event.target.checked);
+        setLocalVioletChecked(event.target.checked);
     };
     const handleBordeauxCheckboxChange = (
         event: React.ChangeEvent<HTMLInputElement>
     ) => {
-        setBordeauChecked(event.target.checked);
+        setLocalBordeauChecked(event.target.checked);
     };
     const handlePinkCheckboxChange = (
         event: React.ChangeEvent<HTMLInputElement>
     ) => {
-        setPinkChecked(event.target.checked);
+        setLocalPinkChecked(event.target.checked);
     };
     const handleYellowCheckboxChange = (
         event: React.ChangeEvent<HTMLInputElement>
     ) => {
-        setYellowChecked(event.target.checked);
+        setLocalYellowChecked(event.target.checked);
     };
 
+    // Price component
+
+    const [minPrice, setMinPrice] = useState<number>(0);
+    const [maxPrice, setMaxPrice] = useState<number>(3000);
+    const [localMinPrice, setLocalMinPrice] = useState<number>(0);
+    const [localMaxPrice, setLocalMaxPrice] = useState<number>(3000);
+
+    function log(value: number | number[]) {
+        if (typeof value === "object") {
+            if (!isNaN(value[0]) && value[0] <= value[1]) {
+                setLocalMinPrice(value[0]);
+            }
+            if (!isNaN(value[1]) && value[1] >= value[0]) {
+                setLocalMaxPrice(value[1]);
+            }
+        }
+    }
+
     const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
-    console.log(selectedFilters);
 
     const handleFilterToggle = (filterName: string, isActive: boolean) => {
         if (isActive && !selectedFilters.includes(filterName)) {
@@ -260,10 +276,11 @@ const CollectionPage = (props: Props) => {
         }
     };
 
-    const handleApplyFilters = () => {
+    const filtrationBody = () => {
         let filteredItems = itemsArray.filter((item) => item.inStock);
 
-        // Фільтр за розміром (queenSize та kingSize)
+        // Size filter
+
         if (queenChecked || kingChecked) {
             filteredItems = filteredItems.filter((item) => {
                 return (
@@ -275,7 +292,8 @@ const CollectionPage = (props: Props) => {
         handleFilterToggle("Queen", queenChecked);
         handleFilterToggle("King", kingChecked);
 
-        // Фільтр за кольором
+        // Color filter
+
         if (
             whiteChecked ||
             blackChecked ||
@@ -339,7 +357,7 @@ const CollectionPage = (props: Props) => {
         handleFilterToggle("Pink", pinkChecked);
         handleFilterToggle("Yellow", yellowChecked);
 
-        // Фільтр за ціною (queensPrice)
+        // Price filter
         if (minPrice !== 0 || maxPrice !== 3000) {
             filteredItems = filteredItems.filter((item) => {
                 return (
@@ -347,6 +365,8 @@ const CollectionPage = (props: Props) => {
                 );
             });
         }
+        handleFilterToggle(`from ${minPrice.toString()}€`, minPrice !== 0);
+        handleFilterToggle(`to ${maxPrice.toString()}€`, maxPrice !== 3000);
 
         if (sortingTitleState === "From cheap to expensive") {
             filteredItems.sort((a, b) => {
@@ -362,9 +382,227 @@ const CollectionPage = (props: Props) => {
             });
         }
 
-        // console.log(filteredItems);
-
         setItemsArrState(filteredItems);
+    };
+
+    useEffect(() => {
+        filtrationBody();
+    }, [
+        queenChecked,
+        kingChecked,
+        whiteChecked,
+        blackChecked,
+        blueChecked,
+        brownChecked,
+        greenChecked,
+        grayChecked,
+        orangeChecked,
+        beigeChecked,
+        violetChecked,
+        bordeauxChecked,
+        pinkChecked,
+        yellowChecked,
+        minPrice,
+        maxPrice,
+    ]);
+
+    const handeleDeliteSelectedFilter = (filterName: string) => {
+        setSelectedFilters((prevFilters) =>
+            prevFilters.filter((filter) => filter !== filterName)
+        );
+
+        if (filterName === "Queen") {
+            setQueenChecked(false);
+            setLocalQueenChecked(false);
+        }
+        if (filterName === "King") {
+            setKingChecked(false);
+            setLocalKingChecked(false);
+        }
+
+        if (filterName === "White") {
+            setWhiteChecked(false);
+            setLocalWhiteChecked(false);
+        }
+        if (filterName === "Black") {
+            setBlackChecked(false);
+            setLocalBlackChecked(false);
+        }
+        if (filterName === "Blue") {
+            setBlueChecked(false);
+            setLocalBlueChecked(false);
+        }
+        if (filterName === "Brown") {
+            setBrownChecked(false);
+            setLocalBrownChecked(false);
+        }
+        if (filterName === "Green") {
+            setGreenChecked(false);
+            setLocalGreenChecked(false);
+        }
+        if (filterName === "Gray") {
+            setGrayChecked(false);
+            setLocalGrayChecked(false);
+        }
+        if (filterName === "Orange") {
+            setOrangeChecked(false);
+            setLocalOrangeChecked(false);
+        }
+        if (filterName === "Beige") {
+            setBeigeChecked(false);
+            setLocalBeigeChecked(false);
+        }
+        if (filterName === "Violet") {
+            setVioletChecked(false);
+            setLocalVioletChecked(false);
+        }
+        if (filterName === "Bordeaux") {
+            setBordeauChecked(false);
+            setLocalBordeauChecked(false);
+        }
+        if (filterName === "Pink") {
+            setPinkChecked(false);
+            setLocalPinkChecked(false);
+        }
+        if (filterName === "Yellow") {
+            setYellowChecked(false);
+            setLocalYellowChecked(false);
+        }
+
+        if (filterName.includes("from")) {
+            setMinPrice(0);
+            setLocalMinPrice(0);
+        }
+        if (filterName.includes("to")) {
+            setMaxPrice(3000);
+            setLocalMaxPrice(3000);
+        }
+    };
+
+    const handleApplyFilters = () => {
+        // let filteredItems = itemsArray.filter((item) => item.inStock);
+
+        setQueenChecked(localQueenChecked);
+        setKingChecked(localKingChecked);
+        setWhiteChecked(localWhiteChecked);
+        setBlackChecked(localBlackChecked);
+        setBlueChecked(localBlueChecked);
+        setBrownChecked(localBrownChecked);
+        setGreenChecked(localGreenChecked);
+        setGrayChecked(localGrayChecked);
+        setOrangeChecked(localOrangeChecked);
+        setBeigeChecked(localBeigeChecked);
+        setVioletChecked(localVioletChecked);
+        setBordeauChecked(localBordeauxChecked);
+        setPinkChecked(localPinkChecked);
+        setYellowChecked(localYellowChecked);
+        setMinPrice(localMinPrice);
+        setMaxPrice(localMaxPrice);
+
+        filtrationBody();
+
+        // // Фільтр за розміром (queenSize та kingSize)
+        // if (queenChecked || kingChecked) {
+        //     filteredItems = filteredItems.filter((item) => {
+        //         return (
+        //             (queenChecked && item.queenSize) ||
+        //             (kingChecked && item.kingSize)
+        //         );
+        //     });
+        // }
+        // handleFilterToggle("Queen", queenChecked);
+        // handleFilterToggle("King", kingChecked);
+
+        // // Фільтр за кольором
+        // if (
+        //     whiteChecked ||
+        //     blackChecked ||
+        //     blueChecked ||
+        //     brownChecked ||
+        //     greenChecked ||
+        //     grayChecked ||
+        //     orangeChecked ||
+        //     beigeChecked ||
+        //     violetChecked ||
+        //     bordeauxChecked ||
+        //     pinkChecked ||
+        //     yellowChecked
+        // ) {
+        //     filteredItems = filteredItems.filter((item) => {
+        //         return (
+        //             (whiteChecked &&
+        //                 (item.color === "white" ||
+        //                     item.color === "grey stripe")) ||
+        //             (blackChecked && item.color === "charcoal gray") ||
+        //             (blueChecked &&
+        //                 (item.color === "young blue" ||
+        //                     item.color === "charming blue")) ||
+        //             (brownChecked &&
+        //                 (item.color === "skin color" ||
+        //                     item.color === "earth brown")) ||
+        //             (greenChecked &&
+        //                 (item.color === "light green" ||
+        //                     item.color === "forest" ||
+        //                     item.color === "sage")) ||
+        //             (grayChecked &&
+        //                 (item.color === "silver grey" ||
+        //                     item.color === "steel gray" ||
+        //                     item.color === "steel gray" ||
+        //                     item.color === "dark gray" ||
+        //                     item.color === "charcoal gray" ||
+        //                     item.color === "gray stripe")) ||
+        //             (orangeChecked && item.color === "orange") ||
+        //             (beigeChecked &&
+        //                 (item.color === "shell" ||
+        //                     item.color === "skin color")) ||
+        //             (violetChecked && item.color === "violet") ||
+        //             (bordeauxChecked && item.color === "bordeaux") ||
+        //             (pinkChecked &&
+        //                 (item.color === "young pink" ||
+        //                     item.color === "rose pink" ||
+        //                     item.color === "light pink"))
+        //         );
+        //     });
+        // }
+        // handleFilterToggle("White", whiteChecked);
+        // handleFilterToggle("Black", blackChecked);
+        // handleFilterToggle("Blue", blueChecked);
+        // handleFilterToggle("Brown", brownChecked);
+        // handleFilterToggle("Green", greenChecked);
+        // handleFilterToggle("Gray", grayChecked);
+        // handleFilterToggle("Orange", orangeChecked);
+        // handleFilterToggle("Beige", beigeChecked);
+        // handleFilterToggle("Violet", violetChecked);
+        // handleFilterToggle("Bordeaux", bordeauxChecked);
+        // handleFilterToggle("Pink", pinkChecked);
+        // handleFilterToggle("Yellow", yellowChecked);
+
+        // // Фільтр за ціною (queensPrice)
+        // if (minPrice !== 0 || maxPrice !== 3000) {
+        //     filteredItems = filteredItems.filter((item) => {
+        //         return (
+        //             item.queensPrice >= minPrice && item.queensPrice <= maxPrice
+        //         );
+        //     });
+        // }
+        // handleFilterToggle(`from ${minPrice.toString()}€`, minPrice !== 0);
+        // handleFilterToggle(`to ${maxPrice.toString()}€`, maxPrice !== 3000);
+
+        // if (sortingTitleState === "From cheap to expensive") {
+        //     filteredItems.sort((a, b) => {
+        //         return (a["queensPrice"] as any) - (b["queensPrice"] as any);
+        //     });
+        // } else if (sortingTitleState === "From expensive to cheap") {
+        //     filteredItems.sort((a, b) => {
+        //         return (b["queensPrice"] as any) - (a["queensPrice"] as any);
+        //     });
+        // } else if (sortingTitleState === "By popularity") {
+        //     filteredItems.sort((a, b) => {
+        //         return (b["popularity"] as any) - (a["popularity"] as any);
+        //     });
+        // }
+
+        // setItemsArrState(filteredItems);
     };
 
     const onClearAllFiltersClick = () => {
@@ -540,7 +778,14 @@ const CollectionPage = (props: Props) => {
                                         key={selectedFilter}
                                         className="row selected-filter-row"
                                     >
-                                        <div className="delite-img"></div>
+                                        <div
+                                            className="delite-img"
+                                            onClick={() =>
+                                                handeleDeliteSelectedFilter(
+                                                    selectedFilter
+                                                )
+                                            }
+                                        ></div>
                                         {colorsObj.map((color) =>
                                             selectedFilter.includes(color) ? (
                                                 <div
@@ -573,7 +818,7 @@ const CollectionPage = (props: Props) => {
                                                 className="checkbox"
                                                 type="checkbox"
                                                 id="queen"
-                                                checked={queenChecked}
+                                                checked={localQueenChecked}
                                                 onChange={
                                                     handleQueenCheckboxChange
                                                 }
@@ -585,7 +830,7 @@ const CollectionPage = (props: Props) => {
                                                 className="checkbox"
                                                 type="checkbox"
                                                 id="king"
-                                                checked={kingChecked}
+                                                checked={localKingChecked}
                                                 onChange={
                                                     handleKingCheckboxChange
                                                 }
@@ -621,7 +866,7 @@ const CollectionPage = (props: Props) => {
                                                 className="checkbox"
                                                 type="checkbox"
                                                 id="white"
-                                                checked={whiteChecked}
+                                                checked={localWhiteChecked}
                                                 onChange={
                                                     handleWhiteCheckboxChange
                                                 }
@@ -639,7 +884,7 @@ const CollectionPage = (props: Props) => {
                                                 className="checkbox"
                                                 type="checkbox"
                                                 id="black"
-                                                checked={blackChecked}
+                                                checked={localBlackChecked}
                                                 onChange={
                                                     handleBlackCheckboxChange
                                                 }
@@ -657,7 +902,7 @@ const CollectionPage = (props: Props) => {
                                                 className="checkbox"
                                                 type="checkbox"
                                                 id="blue"
-                                                checked={blueChecked}
+                                                checked={localBlueChecked}
                                                 onChange={
                                                     handleBlueCheckboxChange
                                                 }
@@ -675,7 +920,7 @@ const CollectionPage = (props: Props) => {
                                                 className="checkbox"
                                                 type="checkbox"
                                                 id="brown"
-                                                checked={brownChecked}
+                                                checked={localBrownChecked}
                                                 onChange={
                                                     handleBrownnCheckboxChange
                                                 }
@@ -693,7 +938,7 @@ const CollectionPage = (props: Props) => {
                                                 className="checkbox"
                                                 type="checkbox"
                                                 id="green"
-                                                checked={greenChecked}
+                                                checked={localGreenChecked}
                                                 onChange={
                                                     handleGreenCheckboxChange
                                                 }
@@ -711,7 +956,7 @@ const CollectionPage = (props: Props) => {
                                                 className="checkbox"
                                                 type="checkbox"
                                                 id="Gray"
-                                                checked={grayChecked}
+                                                checked={localGrayChecked}
                                                 onChange={
                                                     handleGrayCheckboxChange
                                                 }
@@ -729,7 +974,7 @@ const CollectionPage = (props: Props) => {
                                                 className="checkbox"
                                                 type="checkbox"
                                                 id="orange"
-                                                checked={orangeChecked}
+                                                checked={localOrangeChecked}
                                                 onChange={
                                                     handleOrangeCheckboxChange
                                                 }
@@ -747,7 +992,7 @@ const CollectionPage = (props: Props) => {
                                                 className="checkbox"
                                                 type="checkbox"
                                                 id="beige"
-                                                checked={beigeChecked}
+                                                checked={localBeigeChecked}
                                                 onChange={
                                                     handleBeigeCheckboxChange
                                                 }
@@ -765,7 +1010,7 @@ const CollectionPage = (props: Props) => {
                                                 className="checkbox"
                                                 type="checkbox"
                                                 id="violet"
-                                                checked={violetChecked}
+                                                checked={localVioletChecked}
                                                 onChange={
                                                     handleVioletCheckboxChange
                                                 }
@@ -783,7 +1028,7 @@ const CollectionPage = (props: Props) => {
                                                 className="checkbox"
                                                 type="checkbox"
                                                 id="bordeaux"
-                                                checked={bordeauxChecked}
+                                                checked={localBordeauxChecked}
                                                 onChange={
                                                     handleBordeauxCheckboxChange
                                                 }
@@ -801,7 +1046,7 @@ const CollectionPage = (props: Props) => {
                                                 className="checkbox"
                                                 type="checkbox"
                                                 id="pink"
-                                                checked={pinkChecked}
+                                                checked={localPinkChecked}
                                                 onChange={
                                                     handlePinkCheckboxChange
                                                 }
@@ -819,7 +1064,7 @@ const CollectionPage = (props: Props) => {
                                                 className="checkbox"
                                                 type="checkbox"
                                                 id="yellow"
-                                                checked={yellowChecked}
+                                                checked={localYellowChecked}
                                                 onChange={
                                                     handleYellowCheckboxChange
                                                 }
@@ -862,7 +1107,7 @@ const CollectionPage = (props: Props) => {
                                                     className="price-input"
                                                     type="text"
                                                     maxLength={4}
-                                                    value={minPrice}
+                                                    value={localMinPrice}
                                                     onChange={(e) => {
                                                         const newMinPrice =
                                                             parseInt(
@@ -874,9 +1119,9 @@ const CollectionPage = (props: Props) => {
                                                                 newMinPrice
                                                             ) &&
                                                             newMinPrice <
-                                                                maxPrice
+                                                                localMaxPrice
                                                         ) {
-                                                            setMinPrice(
+                                                            setLocalMinPrice(
                                                                 newMinPrice
                                                             );
                                                         }
@@ -887,13 +1132,16 @@ const CollectionPage = (props: Props) => {
                                                             "Backspace"
                                                         ) {
                                                             e.preventDefault();
-                                                            if (minPrice > 0) {
+                                                            if (
+                                                                localMinPrice >
+                                                                0
+                                                            ) {
                                                                 const newMinPrice =
                                                                     Math.floor(
-                                                                        minPrice /
+                                                                        localMinPrice /
                                                                             10
                                                                     );
-                                                                setMinPrice(
+                                                                setLocalMinPrice(
                                                                     Math.max(
                                                                         0,
                                                                         newMinPrice
@@ -910,7 +1158,7 @@ const CollectionPage = (props: Props) => {
                                                     className="price-input"
                                                     type="text"
                                                     maxLength={5}
-                                                    value={maxPrice}
+                                                    value={localMaxPrice}
                                                     onChange={(e) => {
                                                         const newMaxPrice =
                                                             parseInt(
@@ -920,7 +1168,7 @@ const CollectionPage = (props: Props) => {
                                                         if (
                                                             !isNaN(newMaxPrice)
                                                         ) {
-                                                            setMaxPrice(
+                                                            setLocalMaxPrice(
                                                                 newMaxPrice
                                                             );
                                                         }
@@ -930,14 +1178,17 @@ const CollectionPage = (props: Props) => {
                                                             e.key ===
                                                             "Backspace"
                                                         ) {
-                                                            if (maxPrice > 0) {
+                                                            if (
+                                                                localMaxPrice >
+                                                                0
+                                                            ) {
                                                                 e.preventDefault();
                                                                 const newMaxPrice =
                                                                     Math.floor(
-                                                                        maxPrice /
+                                                                        localMaxPrice /
                                                                             10
                                                                     );
-                                                                setMaxPrice(
+                                                                setLocalMaxPrice(
                                                                     Math.max(
                                                                         0,
                                                                         newMaxPrice
@@ -951,7 +1202,7 @@ const CollectionPage = (props: Props) => {
                                                         ) {
                                                             e.preventDefault();
                                                             const newValue =
-                                                                maxPrice
+                                                                localMaxPrice
                                                                     .toString()
                                                                     .slice(
                                                                         0,
@@ -959,7 +1210,7 @@ const CollectionPage = (props: Props) => {
                                                                     ) +
                                                                 "0" +
                                                                 e.key;
-                                                            setMaxPrice(
+                                                            setLocalMaxPrice(
                                                                 parseInt(
                                                                     newValue,
                                                                     10
@@ -981,14 +1232,19 @@ const CollectionPage = (props: Props) => {
                                                         }
                                                     }}
                                                     onBlur={() => {
-                                                        if (maxPrice > 3000) {
-                                                            setMaxPrice(3000);
+                                                        if (
+                                                            localMaxPrice > 3000
+                                                        ) {
+                                                            setLocalMaxPrice(
+                                                                3000
+                                                            );
                                                         }
                                                         if (
-                                                            maxPrice < minPrice
+                                                            localMaxPrice <
+                                                            localMinPrice
                                                         ) {
-                                                            setMaxPrice(
-                                                                minPrice
+                                                            setLocalMaxPrice(
+                                                                localMinPrice
                                                             );
                                                         }
                                                     }}
@@ -1001,7 +1257,10 @@ const CollectionPage = (props: Props) => {
                                                 min={0}
                                                 max={3000}
                                                 onChange={log}
-                                                value={[minPrice, maxPrice]}
+                                                value={[
+                                                    localMinPrice,
+                                                    localMaxPrice,
+                                                ]}
                                                 allowCross={false}
                                             />
                                         </div>
