@@ -256,11 +256,22 @@
                     background-color: #e0d813;
                 }
             }
+            .price-filter {
+                margin-bottom: 0;
+            }
         }
         .items-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             gap: 32px 20px;
+        }
+        .no-result {
+            text-align: center;
+            font-family: "Lora", serif;
+            font-size: 40px;
+            font-weight: 400;
+            line-height: 60px;
+            letter-spacing: -2px;
         }
     }
 }

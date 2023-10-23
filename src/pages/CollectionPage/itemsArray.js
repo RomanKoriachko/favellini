@@ -196,7 +196,7 @@ let itemsArray = [
     },
     {
         id: 14,
-        type: "sdf",
+        type: "robes",
         kingSize: true,
         queenSize: true,
         color: "charming blue",
@@ -211,7 +211,7 @@ let itemsArray = [
     },
     {
         id: 15,
-        type: "sdf",
+        type: "robes",
         kingSize: true,
         queenSize: true,
         color: "steel gray",
@@ -226,7 +226,7 @@ let itemsArray = [
     },
     {
         id: 16,
-        type: "sdf",
+        type: "robes",
         kingSize: true,
         queenSize: true,
         color: "dark gray",
@@ -241,7 +241,7 @@ let itemsArray = [
     },
     {
         id: 17,
-        type: "sdf",
+        type: "accessories",
         kingSize: true,
         queenSize: true,
         color: "charcoal gray",
@@ -256,7 +256,7 @@ let itemsArray = [
     },
     {
         id: 18,
-        type: "sdf",
+        type: "accessories",
         kingSize: true,
         queenSize: true,
         color: "gray stripe",
