@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import StickyBox from "react-sticky-box";
+import { any } from "prop-types";
 
 type Props = {};
 
@@ -42,6 +43,34 @@ const CollectionPage = (props: Props) => {
 
     // Sorting
 
+    useEffect(() => {
+        const handleSortByStock = () => {
+            let availableItems = itemsArrState.filter((item) => item.inStock);
+            let unavailableItems = itemsArrState.filter(
+                (item) => !item.inStock
+            );
+
+            const sortedAvailableItems = sortByField(
+                availableItems,
+                "inStock",
+                false
+            );
+            const sortedUnavailableItems = sortByField(
+                unavailableItems,
+                "inStock",
+                false
+            );
+
+            const sortedItems = [
+                ...sortedAvailableItems,
+                ...sortedUnavailableItems,
+            ];
+
+            setItemsArrState(sortedItems);
+        };
+        handleSortByStock();
+    }, []);
+
     const [itemsArrState, setItemsArrState] = useState(itemsArray);
     const [sortingTitleState, setSortingTitleState] =
         useState<string>("Default");
@@ -60,8 +89,8 @@ const CollectionPage = (props: Props) => {
         field: keyof (typeof itemsArray)[0],
         ascending = true
     ) => {
-        const availableItems = itemsArrState.filter((item) => item.inStock);
-        const unavailableItems = itemsArrState.filter((item) => !item.inStock);
+        let availableItems = itemsArrState.filter((item) => item.inStock);
+        let unavailableItems = itemsArrState.filter((item) => !item.inStock);
 
         const sortedAvailableItems = sortByField(
             availableItems,
@@ -81,11 +110,6 @@ const CollectionPage = (props: Props) => {
 
         setItemsArrState(sortedItems);
     };
-
-    useEffect(() => {
-        handleSortByField("inStock", false);
-        // eslint-disable-next-line
-    }, []);
 
     const sortByLowerPrice = () => {
         handleSortByField("queensPrice", true);
@@ -119,28 +143,25 @@ const CollectionPage = (props: Props) => {
 
     const handleChangeCaterogy = (category: string) => {
         setCategoriesState(category);
+        onClearAllFiltersClick();
+
+        let filteredItems = itemsArray;
+
         if (category !== "All goods") {
-            const categoriesFiltred = itemsArrState.filter((item) => {
+            filteredItems = itemsArray.filter((item) => {
                 return item.type === category.toLowerCase();
             });
-            if (sortingTitleState === "From cheap to expensive") {
-                sortByLowerPrice();
-            } else if (sortingTitleState === "From expensive to cheap") {
-                sortByHighestPrice();
-            } else if (sortingTitleState === "By popularity") {
-                sortByPopularity();
-            }
-            setItemsArrState(categoriesFiltred);
-        } else {
-            setItemsArrState(itemsArray);
-            if (sortingTitleState === "From cheap to expensive") {
-                sortByLowerPrice();
-            } else if (sortingTitleState === "From expensive to cheap") {
-                sortByHighestPrice();
-            } else if (sortingTitleState === "By popularity") {
-                sortByPopularity();
-            }
         }
+
+        if (sortingTitleState === "From cheap to expensive") {
+            filteredItems.sort((a, b) => a.queensPrice - b.queensPrice);
+        } else if (sortingTitleState === "From expensive to cheap") {
+            filteredItems.sort((a, b) => b.queensPrice - a.queensPrice);
+        } else if (sortingTitleState === "By popularity") {
+            filteredItems.sort((a, b) => b.popularity - a.popularity);
+        }
+
+        setItemsArrState(filteredItems);
     };
 
     const [queenChecked, setQueenChecked] = useState(false);
