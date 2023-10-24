@@ -20,7 +20,7 @@ const Footer = (props: Props) => {
                             our team at <span>pr@favellini.com</span> or fill
                             out the form
                         </p>
-                        <div className="row">
+                        <div className="row footer-buttons-row">
                             <div className="footer-btn facebook-btn">
                                 <AnimatedButton
                                     classText="footer-btn facebook-btn"
@@ -68,6 +68,24 @@ const Footer = (props: Props) => {
                             />
                         </div>
                     </form>
+                    <div className="row footer-buttons-row-tablet">
+                        <div className="footer-btn facebook-btn">
+                            <AnimatedButton
+                                classText="footer-btn facebook-btn"
+                                style={styleFb}
+                                trigger={triggerFb}
+                                text=""
+                            />
+                        </div>
+                        <div className="footer-btn instagram-btn">
+                            <AnimatedButton
+                                classText="footer-btn instagram-btn"
+                                style={styleInst}
+                                trigger={triggerInst}
+                                text=""
+                            />
+                        </div>
+                    </div>
                 </div>
                 <div className="copyright">
                     <p>©2023 Favellini. All right reserved</p>
