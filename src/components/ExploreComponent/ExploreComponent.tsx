@@ -1,6 +1,7 @@
 import AnimatedButton from "../AnimatedButton/AnimatedButton";
 import useBoop from "../UseBoop/UseBoop";
 import "./ExploreComponent.scss";
+import { Link } from "react-router-dom";
 
 type Props = {};
 
@@ -23,24 +24,45 @@ const ExploreComponent = (props: Props) => {
                 </p>
                 <div className="items-wrapper">
                     <div className="explore-section-item explore-section-item-1">
-                        <div className="item-img"></div>
-                        <p className="item-name">white king size</p>
+                        <Link className="item-link" to={`collection/white`}>
+                            <div className="item-img"></div>
+                        </Link>
+                        <Link to={`collection/white`}>
+                            <p className="item-name">white king size</p>
+                        </Link>
                     </div>
                     <div className="explore-section-item explore-section-item-2">
-                        <div className="item-img"></div>
-                        <p className="item-name">charming blue king size</p>
+                        <Link
+                            className="item-link"
+                            to={`collection/charming%20blue`}
+                        >
+                            <div className="item-img"></div>
+                        </Link>
+                        <Link to={`collection/charming%20blue`}>
+                            <p className="item-name">charming blue king size</p>
+                        </Link>
                     </div>
                     <div className="explore-section-item explore-section-item-3">
-                        <div className="item-img"></div>
-                        <p className="item-name">light green king size</p>
+                        <Link
+                            className="item-link"
+                            to={`collection/light%20green`}
+                        >
+                            <div className="item-img"></div>
+                        </Link>
+                        <Link to={`collection/light%20green`}>
+                            <p className="item-name">light green king size</p>
+                        </Link>
                     </div>
                     <a href="" className="store-link">
-                        <AnimatedButton
+                        <button className="explore-section-item explore-section-link">
+                            <p>our store</p>
+                        </button>
+                        {/* <AnimatedButton
                             style={style}
                             trigger={trigger}
                             classText="explore-section-item explore-section-link"
                             text="our store"
-                        />
+                        /> */}
                     </a>
                 </div>
             </div>

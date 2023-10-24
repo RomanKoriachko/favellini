@@ -24,10 +24,14 @@
         }
         .explore-section-item {
             height: 100%;
+            > a {
+                text-decoration: none;
+                color: #333333;
+            }
             .item-img {
                 background-position: center;
                 background-repeat: no-repeat;
-                background-size: cover;
+                background-size: 100%;
                 width: 100%;
                 min-height: 304px;
                 > img {
@@ -75,15 +79,37 @@
             line-height: 48px;
             letter-spacing: -1px;
             border-radius: 8px;
+            .item-link {
+                overflow: hidden;
+            }
         }
     }
 }
 
 // ---------------- Disable hover on mobile -------------
 
-// @media (hover: hover) {
-
-// }
+@media (hover: hover) {
+    .explore-section {
+        .items-wrapper {
+            .explore-section-item {
+                .item-img {
+                    transition: 0.3s all;
+                    &:hover {
+                        background-size: 110%;
+                    }
+                }
+            }
+            .explore-section-link {
+                > p {
+                    transition: 0.3s all;
+                }
+                &:hover > p {
+                    transform: scale(115%);
+                }
+            }
+        }
+    }
+}
 
 // ------------- Adaptive -------------
 
