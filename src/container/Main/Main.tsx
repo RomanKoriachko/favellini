@@ -16,7 +16,7 @@ const Main = (props: Props) => {
             <ExploreComponent />
             <HistoryComponent />
             <InnovationComponent />
-            {/* <FeedbackComponent /> */}
+            <FeedbackComponent />
         </main>
     );
 };

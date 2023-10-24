@@ -1,6 +1,6 @@
 .innovation-section {
     padding-top: 87px;
-    margin-bottom: -150px;
+    margin-bottom: -60px;
     background: white;
     .subtitle {
         margin-bottom: 36px;
@@ -64,6 +64,7 @@
 // ------------- Tablet -------------
 @media (max-width: 992px) {
     .innovation-section {
+        margin-bottom: -300px;
         .innovation-content-row {
             flex-direction: column;
             > img {
@@ -123,6 +124,7 @@
 @media (max-width: 576px) {
     .innovation-section {
         padding-top: 32px;
+        margin-bottom: -200px;
         .subtitle {
             margin-bottom: 24px;
         }

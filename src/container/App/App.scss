@@ -54,6 +54,14 @@ body {
     }
 }
 
+// ------------- Tablet -------------
+@media (max-width: 992px) {
+    .small-container {
+        max-width: 1440px;
+        padding: 0px 80px;
+    }
+}
+
 // ------------- Mobile -------------
 @media (max-width: 576px) {
     .container {
