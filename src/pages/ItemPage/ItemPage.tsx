@@ -134,7 +134,7 @@ const ItemPage = (props: Props) => {
                                     ))}
                                 </div>
                             </div>
-                            <a href="">
+                            <a href="https://www.google.com.ua/?hl=uk">
                                 <button className="shop-btn">
                                     let's go to the store
                                 </button>

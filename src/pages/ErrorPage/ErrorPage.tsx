@@ -4,7 +4,7 @@ import { useRouteError } from "react-router-dom";
 type Props = {};
 
 const ErrorPage = (props: Props) => {
-    let error = useRouteError();
+    let error: any = useRouteError();
     console.log(error);
     return (
         <main className="error-page">
@@ -15,7 +15,6 @@ const ErrorPage = (props: Props) => {
                 </p>
 
                 <p className="error-message-text">
-                    {/* @ts-ignore */}
                     {error.data ?? error.message}
                 </p>
             </div>
