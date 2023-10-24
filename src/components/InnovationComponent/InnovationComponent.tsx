@@ -9,9 +9,12 @@ const InnovationComponent = (props: Props) => {
         <section className="innovation-section">
             <div className="container">
                 <p className="subtitle">Innovation and Comfort</p>
-                <p className="title title-1">Our commitment</p>
-                <p className="title title-2">to innovation shines</p>
-                <p className="title title-3">through in our products</p>
+                <div className="title-wrapper">
+                    <p className="title title-1">Our commitment</p>
+                    <p className="title title-2">to innovation shines</p>
+                    <p className="title title-3">through in our products</p>
+                </div>
+
                 <div className="row innovation-content-row left-side-row">
                     <img src="images/innovation-img-1.jpg" alt="" />
                     <div>
@@ -33,7 +36,7 @@ const InnovationComponent = (props: Props) => {
                 </div>
                 <div className="small-container">
                     <div className="row innovation-content-row right-side-row">
-                        <div>
+                        <div className="button-parent">
                             <p className="title">Legacy</p>
                             <p className="text">
                                 As Roberto Favellini introduced his Symphony Of
@@ -51,8 +54,17 @@ const InnovationComponent = (props: Props) => {
                                 the world has been indelibly transformed by his
                                 visionary luxury.
                             </p>
+                            <Link
+                                className="innovation-section-btn-link-tabet"
+                                to={"collection"}
+                            >
+                                <SeeMoreButton />
+                            </Link>
                         </div>
-                        <img src="images/innovation-img-2.jpg" alt="" />
+                        <div className="img-wrapper">
+                            <img src="images/innovation-img-2.jpg" alt="" />
+                        </div>
+
                         <Link
                             className="innovation-section-btn-link"
                             to={"collection"}

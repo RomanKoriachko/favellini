@@ -30,10 +30,120 @@
     }
     .right-side-row {
         position: relative;
+        .innovation-section-btn-link-tabet {
+            display: none;
+        }
         .innovation-section-btn-link {
             position: absolute;
             top: -85px;
             right: -85px;
+        }
+    }
+}
+
+// ---------------- Disable hover on mobile -------------
+
+// @media (hover: hover) {
+
+// }
+
+// ------------- Adaptive -------------
+
+// ------------- Laptop -------------
+@media (max-width: 1200px) {
+    .innovation-section {
+        .innovation-content-row {
+            margin-top: 50px;
+        }
+        .small-container {
+            padding: 0px;
+        }
+    }
+}
+
+// ------------- Tablet -------------
+@media (max-width: 992px) {
+    .innovation-section {
+        .innovation-content-row {
+            flex-direction: column;
+            > img {
+                width: 100%;
+            }
+        }
+        .title-wrapper {
+            text-align: end;
+        }
+        .title {
+            font-size: 54px;
+        }
+        .title-1 {
+            text-align: left;
+            margin-left: 0px;
+        }
+        .title-2 {
+            text-align: left;
+        }
+        .title-3 {
+            width: 70%;
+            margin-left: auto;
+        }
+        .right-side-row {
+            .button-parent {
+                position: relative;
+            }
+            .innovation-section-btn-link-tabet {
+                display: block;
+                position: absolute;
+                right: 0px;
+                bottom: -110px;
+                .about-section-btn {
+                    width: 170px;
+                    height: 170px;
+                    font-size: 32px;
+                    line-height: 32px;
+                }
+            }
+            .innovation-section-btn-link {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 750px) {
+    .innovation-section {
+        .title {
+            font-size: 40px;
+            line-height: 50px;
+        }
+    }
+}
+
+// ------------- Mobile -------------
+@media (max-width: 576px) {
+    .innovation-section {
+        padding-top: 32px;
+        .subtitle {
+            margin-bottom: 24px;
+        }
+        .title {
+            font-size: 32px;
+            line-height: 32px;
+        }
+        .innovation-content-row {
+            margin-top: 24px;
+            gap: 24px;
+            .title {
+                margin-bottom: 24px;
+            }
+            .img-wrapper {
+                max-height: 415px;
+                width: 100%;
+                overflow: hidden;
+                > img {
+                    width: 100%;
+                }
+            }
         }
     }
 }
