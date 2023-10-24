@@ -526,7 +526,7 @@ const CollectionPage = (props: Props) => {
 
         window.scrollTo({
             top: 0,
-            behavior: "smooth", // Додавання цього параметра робить прокрутку плавною (підтримується в сучасних браузерах)
+            behavior: "smooth",
         });
     };
 

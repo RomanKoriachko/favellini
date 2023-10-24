@@ -10,7 +10,7 @@ function App() {
             <ScrollToTop />
             <Header />
             <Outlet />
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 }
