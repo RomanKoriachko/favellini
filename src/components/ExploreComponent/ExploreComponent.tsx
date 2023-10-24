@@ -1,12 +1,10 @@
-import AnimatedButton from "../AnimatedButton/AnimatedButton";
-import useBoop from "../UseBoop/UseBoop";
 import "./ExploreComponent.scss";
 import { Link } from "react-router-dom";
 
 type Props = {};
 
 const ExploreComponent = (props: Props) => {
-    const [style, trigger] = useBoop({ x: 10 });
+    // const [style, trigger] = useBoop({ x: 10 });
     return (
         <section className="explore-section">
             <div className="container">
@@ -53,7 +51,10 @@ const ExploreComponent = (props: Props) => {
                             <p className="item-name">light green king size</p>
                         </Link>
                     </div>
-                    <a href="" className="store-link">
+                    <a
+                        href="https://www.google.com.ua/?hl=uk"
+                        className="store-link"
+                    >
                         <button className="explore-section-item explore-section-link">
                             <p>our store</p>
                         </button>
