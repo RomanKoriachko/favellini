@@ -80,12 +80,14 @@ const Footer = (props: Props) => {
                             />
                         </div>
                         <div className="footer-btn instagram-btn">
-                            <AnimatedButton
-                                classText="footer-btn instagram-btn"
-                                style={styleInst}
-                                trigger={triggerInst}
-                                text=""
-                            />
+                            <a href="https://www.instagram.com/favellini_tm/">
+                                <AnimatedButton
+                                    classText="footer-btn instagram-btn"
+                                    style={styleInst}
+                                    trigger={triggerInst}
+                                    text=""
+                                />
+                            </a>
                         </div>
                     </div>
                 </div>

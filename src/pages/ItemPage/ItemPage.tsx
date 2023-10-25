@@ -316,7 +316,7 @@ const ItemPage = (props: Props) => {
                     </div>
                 </div>
                 <HistoryComponent />
-                {/* <PakingComponent /> */}
+                <PakingComponent />
             </div>
         </main>
     );

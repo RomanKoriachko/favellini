@@ -19,6 +19,14 @@ const PakingComponent = (props: Props) => {
                     src="/images/innovation-img-1.jpg"
                     alt=""
                 />
+                <div className="tablet-text">
+                    <p className="text">
+                        All Favellini products are packaged in a gift box.
+                    </p>
+                    <p className="text">
+                        This box is convenient for storing laundry at home.
+                    </p>
+                </div>
                 <img
                     className="paking-img-2"
                     src="/images/innovation-img-2.jpg"

@@ -21,10 +21,80 @@
         width: 580px;
         margin-bottom: -3px;
     }
+    .tablet-text {
+        display: none;
+    }
     .paking-img-2 {
         position: absolute;
         height: 588px;
         top: -96px;
         right: 0px;
+    }
+}
+
+// ------------- Adaptive -------------
+
+// ------------- Laptop -------------
+@media (max-width: 1200px) {
+    .paking-section {
+        .text {
+            margin-left: 50px;
+        }
+        .paking-img-1 {
+            margin-left: 0;
+        }
+    }
+}
+
+// ------------- Tablet -------------
+@media (max-width: 992px) {
+    .paking-section {
+        text-align: center;
+        padding-top: 60px;
+        .subtitle,
+        .title {
+            text-align: left;
+        }
+        .small-container {
+            > .text {
+                display: none;
+            }
+        }
+        .paking-img-1 {
+            margin-top: 20px;
+            width: 100%;
+        }
+        .tablet-text {
+            display: block;
+            margin: 16px 0px;
+            text-align: left;
+            .text {
+                margin-left: 0;
+            }
+        }
+        .paking-img-2 {
+            position: static;
+            width: 100%;
+            height: auto;
+            max-width: 600px;
+            margin-bottom: -4px;
+        }
+    }
+}
+
+// ------------- Mobile -------------
+@media (max-width: 576px) {
+    .paking-section {
+        padding-top: 32px;
+        .subtitle {
+            margin-bottom: 24px;
+        }
+        .title {
+            font-size: 64px;
+            line-height: 64px;
+        }
+        .paking-img-1 {
+            margin-top: 0;
+        }
     }
 }
