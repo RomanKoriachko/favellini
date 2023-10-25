@@ -820,6 +820,11 @@ const CollectionPage = (props: Props) => {
                                         className={`filter-content-wrapper ${colorMenuState}`}
                                     >
                                         <div className="margin"></div>
+                                        <p className="color-description">
+                                            Product color may slightly vary due
+                                            to photographic lighting sources or
+                                            your monitor settings.
+                                        </p>
                                         <div className="checkbox-wrapper">
                                             <div className="checkbox-row">
                                                 <input
