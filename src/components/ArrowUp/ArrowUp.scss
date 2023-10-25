@@ -1,0 +1,36 @@
+.arrow-up-wrapper {
+    visibility: visible;
+    opacity: 1;
+
+    transition: 0.3s all;
+}
+.hide {
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s all;
+}
+
+.arrow-up {
+    position: fixed;
+    bottom: 30px;
+    right: 15px;
+    z-index: 1000;
+
+    width: 50px;
+    height: 50px;
+    border: 1px solid #41a195;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    background-image: url(../../assets/arrow-up.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+// ------------- Mobile -------------
+@media (max-width: 576px) {
+    .arrow-up {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+}

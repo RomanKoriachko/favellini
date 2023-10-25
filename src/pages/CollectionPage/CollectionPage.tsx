@@ -330,7 +330,7 @@ const CollectionPage = (props: Props) => {
                 return (
                     (whiteChecked &&
                         (item.color === "white" ||
-                            item.color === "grey stripe")) ||
+                            item.color === "gray stripe")) ||
                     (blackChecked && item.color === "charcoal gray") ||
                     (blueChecked &&
                         (item.color === "young blue" ||
@@ -343,7 +343,7 @@ const CollectionPage = (props: Props) => {
                             item.color === "forest" ||
                             item.color === "sage")) ||
                     (grayChecked &&
-                        (item.color === "silver grey" ||
+                        (item.color === "silver gray" ||
                             item.color === "steel gray" ||
                             item.color === "steel gray" ||
                             item.color === "dark gray" ||
