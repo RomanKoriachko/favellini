@@ -8,6 +8,7 @@ import CollectionPage from "./pages/CollectionPage/CollectionPage";
 import Main from "./container/Main/Main";
 import App from "./container/App/App";
 import ItemPage from "./pages/ItemPage/ItemPage";
+import { HelmetProvider } from "react-helmet-async";
 
 const router = createBrowserRouter([
     {
@@ -36,7 +37,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <React.StrictMode>
-        <RouterProvider router={router} />
+        <HelmetProvider>
+            <RouterProvider router={router} />
+        </HelmetProvider>
     </React.StrictMode>
 );
 
