@@ -610,13 +610,21 @@ const CollectionPage = (props: Props) => {
         <main className="main">
             <Helmet>
                 <title>Favellini - Collection</title>
+                <meta property="og:title" content="Favellini - Collection" />
+                <meta
+                    property="telegram:title"
+                    content="Favellini - Collection"
+                />
                 <meta
                     name="description"
                     content="Founded by the visionary designer, Roberto Favellini, our brand has redefined opulence and perfection. We believe that luxury should be an everyday experience, and our mission is to bring unparalleled comfort to your life."
                 />
-                <meta property="og:title" content="Favellini - Collection" />
                 <meta
                     property="og:description"
+                    content="Founded by the visionary designer, Roberto Favellini, our brand has redefined opulence and perfection. We believe that luxury should be an everyday experience, and our mission is to bring unparalleled comfort to your life."
+                />
+                <meta
+                    property="telegram:description"
                     content="Founded by the visionary designer, Roberto Favellini, our brand has redefined opulence and perfection. We believe that luxury should be an everyday experience, and our mission is to bring unparalleled comfort to your life."
                 />
             </Helmet>
