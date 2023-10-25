@@ -8,6 +8,7 @@ import SliderComponent, {
 } from "../../components/SliderComponent/SliderComponent";
 import { useState } from "react";
 import PakingComponent from "../../components/PakingComponent/PakingComponent";
+import { Helmet } from "react-helmet-async";
 
 type Props = {};
 
@@ -77,6 +78,13 @@ const ItemPage = (props: Props) => {
 
     return (
         <main className="main">
+            <Helmet>
+                <title>Favellini - Collection</title>
+                <meta
+                    name="description"
+                    content="Founded by the visionary designer, Roberto Favellini, our brand has redefined opulence and perfection. We believe that luxury should be an everyday experience, and our mission is to bring unparalleled comfort to your life."
+                />
+            </Helmet>
             <div className="item-page">
                 <div className="header-bg"></div>
                 <div className="container">
