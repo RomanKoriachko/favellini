@@ -44,7 +44,7 @@
     }
     .video-section-btn {
         position: absolute;
-        top: 75%;
+        top: 70%;
         left: 50%;
         transform: translate(-50%, -50%);
         width: 64px;
@@ -67,7 +67,7 @@
         .video-section-btn {
             transition: 0.3s ease-in-out all;
             &:hover {
-                top: 77%;
+                top: 72%;
             }
         }
     }
@@ -79,17 +79,17 @@
 @media (max-width: 1200px) {
     .video-section {
         .video-section-logo-text {
-            top: 70%;
+            top: 75%;
         }
         .video-section-btn {
-            top: 80%;
+            top: 85%;
         }
     }
     @media (hover: hover) {
         .video-section {
             .video-section-btn {
                 &:hover {
-                    top: 82%;
+                    top: 87%;
                 }
             }
         }

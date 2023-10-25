@@ -17,7 +17,7 @@ const VideoComponent = (props: Props) => {
                 className="video-bg"
                 src={videoBg}
                 preload="auto"
-                poster="images/background.png"
+                poster="images/background.jpg"
                 autoPlay
                 muted
                 loop

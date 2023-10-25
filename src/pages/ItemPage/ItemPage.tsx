@@ -224,7 +224,7 @@ const ItemPage = (props: Props) => {
                                     onClick={openMaterialsDropdown}
                                     className="row product-description-block-row"
                                 >
-                                    <p>Матеріали та догляд</p>
+                                    <p>product description</p>
                                     <div
                                         className={`arrow-down ${dropdownMaterialsState}`}
                                     ></div>
@@ -235,23 +235,64 @@ const ItemPage = (props: Props) => {
                                     <div className="margin"></div>
                                     <div>
                                         <p>
-                                            <span>Чохол:</span> поліестер з
-                                            водовідштовхувальною пропиткою
-                                            (Oxford)
+                                            <span>Easy Care & Durable:</span>{" "}
+                                            Machine wash separately in cold
+                                            water, gentle cycle, Do not bleach.
+                                            No pilling, no shrink, no fade,
+                                            labor tests show that the bamboo
+                                            rayon sheets set keep its shape and
+                                            stay brands new after 100+ wash
+                                            cycles.
                                         </p>
                                         <p>
-                                            <span>Наповнювач:</span> холофайбер
+                                            <span>
+                                                The Softest Luxury Sheets You'll
+                                                Ever Own:
+                                            </span>{" "}
+                                            Rest like royalty in our
+                                            ultra-smooth and incredibly soft
+                                            sheets set. Includes 2 pillowcases,
+                                            1 fitted sheet, and 1 flat sheet,
+                                            which is packaged in a reusable
+                                            storage box made from paper.
                                         </p>
                                         <p>
-                                            <span>Деталі:</span> ручки - шкіра,
-                                            фурнітура - метал
+                                            <span>All-Season Comfort:</span> Our
+                                            sheets set keeps you cool in the
+                                            summer and toasty in the winter.
+                                            These non pilling sheets adjust to
+                                            the condition of the surroundings,
+                                            so you can say goodbye to night
+                                            sweats. Made for Sheet Connoisseurs:
+                                            These extra deep pocket sheets have
+                                            a tight twill weave that do not
+                                            pill, so your luxury bedding lasts.
                                         </p>
-                                    </div>
-                                    <div>
-                                        Сумку можна прати тільки вручну. Вкладку
-                                        (дно) не можна прати - тільки сам чохол.
-                                        Дайте висохнути на сушильній решітці та
-                                        потрусіть, щоб розправити наповнювач.
+                                        <p>
+                                            <span>
+                                                Sheet & Pillowcase Sets for
+                                                Sensitive Skin:
+                                            </span>{" "}
+                                            Our hotel quality sheets and
+                                            pillowcases are made with round
+                                            fibers that are incredibly soft.
+                                            This viscose derived from bamboo
+                                            sheet set do not collect sweat and
+                                            dirt, so you can stay comfortable
+                                            all night long.
+                                        </p>
+                                        <p>
+                                            <span>
+                                                The Only Responsible
+                                                Alternative:
+                                            </span>
+                                            Favellini is committed to providing
+                                            every family with luxurious linens
+                                            that last. Ethically made with
+                                            organic Viscose derived from Bamboo,
+                                            the fabrics in our bed sheets are
+                                            OEKO-TEX standard 100 certified.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
