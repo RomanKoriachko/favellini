@@ -5,7 +5,8 @@ type Props = {};
 
 const HistoryComponent = (props: Props) => {
     return (
-        <section className="history-section" id="history">
+        <section className="history-section">
+            <div className="history-section-anker" id="history"></div>
             <div className="small-container">
                 <AnimationOnScroll
                     animateIn="animate__fadeInLeft"

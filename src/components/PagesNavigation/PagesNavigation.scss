@@ -13,3 +13,12 @@
         color: #333333;
     }
 }
+
+// ------------- Adaptive -------------
+
+// ------------- Tablet -------------
+@media (max-width: 992px) {
+    .pages {
+        margin: 16px 0px;
+    }
+}

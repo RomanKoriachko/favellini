@@ -48,9 +48,86 @@
             max-width: 160px;
             > img {
                 height: 110px;
-                width: 100%;
+                width: 90%;
                 object-fit: cover;
                 object-position: center;
+            }
+        }
+        .slick-prev,
+        .slick-next {
+            display: none;
+        }
+        .slick-prev::before,
+        .slick-next::before {
+            display: none;
+        }
+    }
+}
+
+// ------------- Adaptive -------------
+
+// ------------- Laptop -------------
+@media (max-width: 1200px) {
+    .sliders {
+        .first-slider {
+            .first-slider-item {
+                height: 400px;
+            }
+        }
+        .second-slider {
+            .second-slider-item {
+                > img {
+                    height: 90px;
+                }
+            }
+        }
+    }
+}
+
+// ------------- Tablet -------------
+@media (max-width: 992px) {
+    .sliders {
+        width: 100%;
+        margin-bottom: 60px;
+        .first-slider {
+            .slick-prev,
+            .slick-next {
+                top: 120%;
+            }
+            .slick-dots {
+                bottom: -180px;
+            }
+        }
+
+        .second-slider {
+            .second-slider-item {
+                max-width: 220px;
+                > img {
+                    height: 120px;
+                }
+            }
+        }
+    }
+}
+
+// ------------- Mobile -------------
+@media (max-width: 576px) {
+    .sliders {
+        margin-bottom: 45px;
+        .first-slider {
+            .first-slider-item {
+                height: 240px;
+            }
+            .slick-prev,
+            .slick-next {
+                top: 133%;
+            }
+        }
+        .second-slider {
+            .second-slider-item {
+                > img {
+                    margin: 0 auto;
+                }
             }
         }
     }

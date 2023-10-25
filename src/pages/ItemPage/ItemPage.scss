@@ -53,11 +53,16 @@
                 }
             }
             .dropdown-title {
+                width: 50%;
                 font-size: 16px;
                 font-weight: 300;
                 line-height: 19px;
                 letter-spacing: 0em;
                 margin-bottom: 16px;
+            }
+            .dropdown-title-description {
+                margin-bottom: 20px;
+                width: 70%;
             }
             .dropdown-menu {
                 width: 100%;
@@ -207,6 +212,62 @@
                         max-height: 100em;
                         opacity: 1;
                         visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ------------- Adaptive -------------
+
+// ------------- Laptop -------------
+@media (max-width: 1200px) {
+    .item-page {
+        .item-content-wrapper {
+            .item-description {
+                width: auto;
+                .sizes-row {
+                    width: 65%;
+                }
+            }
+        }
+    }
+}
+
+// ------------- Tablet -------------
+@media (max-width: 992px) {
+    .item-page {
+        .header-bg {
+            height: 60px;
+        }
+        .item-content-wrapper {
+            flex-direction: column;
+            .item-description {
+                .sizes-row {
+                    width: 100%;
+                }
+                .dropdown-title-row {
+                    flex-direction: column;
+                }
+                .dropdown-title,
+                .dropdown-title-description {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+// ------------- Mobile -------------
+@media (max-width: 576px) {
+    .item-page {
+        .item-content-wrapper {
+            .item-description {
+                .title-row {
+                    align-items: flex-end;
+                    .second-item-title {
+                        margin-bottom: 0;
                     }
                 }
             }

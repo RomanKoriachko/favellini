@@ -54,6 +54,14 @@ const SliderComponent = (props: Props) => {
         slidesToShow: 3,
         swipeToSlide: true,
         focusOnSelect: true,
+        responsive: [
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 2,
+                },
+            },
+        ],
     };
 
     // Додавання обробника події кліку на зображеннях в другому слайдері

@@ -101,7 +101,7 @@ const ItemPage = (props: Props) => {
                                         {currentItem.type}
                                     </p>
                                 </div>
-                                <p className="item-title">
+                                <p className="item-title second-item-title">
                                     <span>from</span> {currentItem.queensPrice}€
                                 </p>
                             </div>
@@ -116,7 +116,15 @@ const ItemPage = (props: Props) => {
                                     <span>King size</span>
                                 </p>
                             </div>
-                            <p className="dropdown-title">Choose a color</p>
+                            <div className="row dropdown-title-row">
+                                <p className="dropdown-title">Choose a color</p>
+                                <p className="dropdown-title-description">
+                                    Product color may slightly vary due to
+                                    photographic lighting sources or your
+                                    monitor settings.
+                                </p>
+                            </div>
+
                             <div className="dropdown-menu">
                                 <div
                                     className="current-item row"
@@ -308,7 +316,7 @@ const ItemPage = (props: Props) => {
                     </div>
                 </div>
                 <HistoryComponent />
-                <PakingComponent />
+                {/* <PakingComponent /> */}
             </div>
         </main>
     );
