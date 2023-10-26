@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import itemsArray from "../../pages/CollectionPage/itemsArray";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { setItemsState } from "../../redux/itemsReducer";
+import { closeTabletFilterState } from "../../redux/tabletFilterReduser";
 
 type Props = {};
 
@@ -432,6 +433,7 @@ const FilterComponent = (props: Props) => {
         setMaxPrice(localMaxPrice);
 
         filtrationBody();
+        dispatch(closeTabletFilterState());
 
         window.scrollTo({
             top: 0,
@@ -475,6 +477,8 @@ const FilterComponent = (props: Props) => {
         setYellowChecked(false);
         setMinPrice(0);
         setMaxPrice(3000);
+
+        dispatch(closeTabletFilterState());
 
         setSelectedFilters([]);
 
@@ -954,6 +958,20 @@ const FilterComponent = (props: Props) => {
                         Apply
                     </button>
                 </div>
+            </div>
+            <div className="tablet-buttons-wrapper">
+                <button
+                    className="tablet-btn cancel-btn"
+                    onClick={onClearAllFiltersClick}
+                >
+                    Cancel ({selectedFilters.length})
+                </button>
+                <button
+                    className="tablet-btn apply-btn"
+                    onClick={handleApplyFilters}
+                >
+                    Apply
+                </button>
             </div>
         </div>
     );

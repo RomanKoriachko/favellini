@@ -202,6 +202,9 @@
     .price-filter {
         margin-bottom: 0;
     }
+    .tablet-buttons-wrapper {
+        display: none;
+    }
 }
 
 // ------------- Adaptive -------------
@@ -221,6 +224,51 @@
 
 // ------------- Tablet -------------
 @media (max-width: 992px) {
+    .filter-tablet {
+        .filter {
+            overflow-y: scroll;
+            .filter-block {
+                .filter-btn {
+                    width: 300px;
+                }
+                .input-wrapper {
+                    .price-input {
+                        width: 120px;
+                    }
+                    .input-row {
+                        justify-content: left;
+                        gap: 20px;
+                    }
+                    .price-slider {
+                        max-width: 300px;
+                    }
+                }
+            }
+            .price-filter {
+                .filter-btn {
+                    display: none;
+                }
+            }
+            .tablet-buttons-wrapper {
+                display: block;
+                margin-top: 16px;
+                .tablet-btn {
+                    padding: 13px;
+                    min-width: 160px;
+                    border: none;
+                }
+                .cancel-btn {
+                    background-color: white;
+                    border: 1px solid #333333;
+                    margin-right: 16px;
+                }
+                .apply-btn {
+                    background-color: #333333;
+                    color: white;
+                }
+            }
+        }
+    }
 }
 
 // ------------- Mobile -------------

@@ -1,5 +1,5 @@
 import "./SortingComponent.scss";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { setItemsState } from "../../redux/itemsReducer";
 import itemsArray from "../../pages/CollectionPage/itemsArray";
@@ -20,30 +20,6 @@ const SortingComponent = (props: Props) => {
     };
 
     // Sorting
-
-    useEffect(() => {
-        let availableItems = itemsArrState.filter((item) => item.inStock);
-        let unavailableItems = itemsArrState.filter((item) => !item.inStock);
-
-        const sortedAvailableItems = sortByField(
-            availableItems,
-            "inStock",
-            false
-        );
-        const sortedUnavailableItems = sortByField(
-            unavailableItems,
-            "inStock",
-            false
-        );
-
-        const sortedItems = [
-            ...sortedAvailableItems,
-            ...sortedUnavailableItems,
-        ];
-
-        dispatch(setItemsState(sortedItems));
-        // eslint-disable-next-line
-    }, []);
 
     function sortByField<T>(array: T[], field: keyof T, ascending = true): T[] {
         return [...array].sort((a, b) => {

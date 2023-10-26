@@ -1,0 +1,33 @@
+.sorting-tablet {
+    .sorting-list {
+        .checkbox-row {
+            align-items: center;
+            color: #808080;
+            margin-bottom: 18px;
+        }
+        .checkbox {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            margin-left: 0;
+            border: 1px solid #c9c9c9;
+            outline: none;
+        }
+        .checkbox:checked {
+            background-image: url(../../assets/checked--tablet-checkbox-img.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 14px 14px;
+        }
+    }
+    .tablet-sorting-btn {
+        margin-top: 6px;
+        border: none;
+        background-color: #333333;
+        color: white;
+        padding: 13px 0px;
+        min-width: 300px;
+    }
+}
