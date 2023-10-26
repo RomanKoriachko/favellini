@@ -290,4 +290,33 @@
 
 // ------------- Mobile -------------
 @media (max-width: 576px) {
+    .filter-tablet {
+        .filter {
+            .filter-block {
+                .filter-btn {
+                    width: 100%;
+                }
+                .input-wrapper {
+                    .input-row {
+                        justify-content: center;
+                    }
+                    .price-input {
+                        width: 100px;
+                    }
+                    .price-slider {
+                        max-width: 100%;
+                    }
+                }
+            }
+            .tablet-buttons-wrapper {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .tablet-btn {
+                    width: 50%;
+                    min-width: auto;
+                }
+            }
+        }
+    }
 }

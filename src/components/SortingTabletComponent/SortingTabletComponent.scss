@@ -31,3 +31,14 @@
         min-width: 300px;
     }
 }
+
+// ------------- Adaptive -------------
+
+// ------------- Mobile -------------
+@media (max-width: 576px) {
+    .sorting-tablet {
+        .tablet-sorting-btn {
+            width: 100%;
+        }
+    }
+}

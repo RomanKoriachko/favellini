@@ -62,7 +62,7 @@ const Header = (props: Props) => {
                                 >
                                     <Link
                                         className="header-menu-item active"
-                                        to={"collection"}
+                                        to="/collection"
                                         onClick={closeBurgerMenu}
                                     >
                                         collection

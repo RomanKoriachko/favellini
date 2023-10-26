@@ -62,6 +62,9 @@
             .sticky-box {
                 display: none;
             }
+            .items-wrapper {
+                grid-template-columns: 1fr 1fr;
+            }
         }
         .tablet-buttons-row {
             display: flex;
@@ -175,4 +178,21 @@
 
 // ------------- Mobile -------------
 @media (max-width: 576px) {
+    .collection-page {
+        .header-bg {
+            height: 60px;
+        }
+        .tablet-buttons-row {
+            justify-content: center;
+            .tablet-button {
+                width: 50%;
+                min-width: auto;
+            }
+        }
+        .collection-wrapper {
+            .items-wrapper {
+                gap: 16px;
+            }
+        }
+    }
 }

@@ -50,8 +50,31 @@
 
 // ------------- Tablet -------------
 @media (max-width: 992px) {
+    .item {
+        .img-wrapper {
+            max-width: 100%;
+            overflow: hidden;
+            > img {
+                // width: auto;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
 }
 
 // ------------- Mobile -------------
 @media (max-width: 576px) {
+    .item {
+        .description-row {
+            flex-direction: column;
+            gap: 4px;
+            .price {
+                text-align: left;
+            }
+            .item-type {
+                font-size: 14px;
+            }
+        }
+    }
 }
