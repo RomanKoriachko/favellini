@@ -3,55 +3,6 @@
     .header-bg {
         height: 80px;
     }
-    .sorting {
-        width: 93%;
-        margin-bottom: 14px;
-        position: relative;
-        .sorting-row {
-            justify-content: flex-end;
-            align-items: center;
-            gap: 13px;
-            user-select: none;
-            cursor: pointer;
-            .arrow {
-                width: 24px;
-                height: 24px;
-                background-image: url(../../assets/arrow-down.svg);
-                background-position: center;
-                background-repeat: no-repeat;
-                transform: rotate(90deg);
-            }
-            .arrow.open {
-                transform: rotate(0deg);
-            }
-        }
-        .sorting-list {
-            position: absolute;
-            top: 38px;
-            right: 0px;
-            padding: 20px;
-            padding-bottom: 0;
-            border: 1px solid #979cab;
-            background-color: white;
-            visibility: hidden;
-            opacity: 0;
-            > p {
-                margin-bottom: 15px;
-                color: #808080;
-                cursor: pointer;
-            }
-            // > p:last-child {
-            //     margin-bottom: 0;
-            // }
-            .disable {
-                display: none;
-            }
-        }
-        .sorting-list.open {
-            visibility: visible;
-            opacity: 1;
-        }
-    }
     .collection-wrapper {
         display: grid;
         grid-template-columns: 280px minmax(100px, 880px);
@@ -82,9 +33,6 @@
 // ------------- Laptop -------------
 @media (max-width: 1200px) {
     .collection-page {
-        .sorting {
-            width: 100%;
-        }
         .collection-wrapper {
             grid-template-columns: 250px minmax(100px, 880px);
             .filter {
@@ -103,11 +51,6 @@
 // ------------- Tablet -------------
 @media (max-width: 992px) {
     .collection-page {
-        .sorting {
-            .sorting-row {
-                display: none;
-            }
-        }
         .collection-wrapper {
             grid-template-columns: 1fr;
             .sticky-box {
