@@ -54,7 +54,7 @@
     }
     .collection-wrapper {
         display: grid;
-        grid-template-columns: 280px 880px;
+        grid-template-columns: 280px minmax(100px, 880px);
         gap: 20px;
         align-items: start;
         padding-bottom: 80px;
@@ -277,4 +277,78 @@
             letter-spacing: -2px;
         }
     }
+    .tablet-buttons-row {
+        display: none;
+    }
+}
+
+// ------------- Adaptive -------------
+
+// ------------- Laptop -------------
+@media (max-width: 1200px) {
+    .collection-page {
+        .sorting {
+            width: 100%;
+        }
+        .collection-wrapper {
+            grid-template-columns: 250px minmax(100px, 880px);
+            .filter {
+                .filter-block {
+                    .input-wrapper {
+                        .price-input {
+                            width: 85px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ------------- Tablet -------------
+@media (max-width: 992px) {
+    .collection-page {
+        .sorting {
+            .sorting-row {
+                display: none;
+            }
+        }
+        .collection-wrapper {
+            grid-template-columns: 1fr;
+            .sticky-box {
+                display: none;
+            }
+        }
+        .tablet-buttons-row {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 16px;
+            margin-bottom: 16px;
+            .tablet-button {
+                padding: 14px 16px;
+                border: 1px solid #333333;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                min-width: 160px;
+                .btn-img {
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    width: 24px;
+                    height: 24px;
+                }
+                .filters-btn-img {
+                    background-image: url(../../assets/fIlter-icon.svg);
+                }
+                .sorting-btn-img {
+                    background-image: url(../../assets/sort-icon.svg);
+                }
+            }
+        }
+    }
+}
+
+// ------------- Mobile -------------
+@media (max-width: 576px) {
 }
