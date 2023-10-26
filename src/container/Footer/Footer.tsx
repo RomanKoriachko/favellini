@@ -21,14 +21,14 @@ const Footer = (props: Props) => {
                             out the form
                         </p>
                         <div className="row footer-buttons-row">
-                            <div className="footer-btn facebook-btn">
+                            {/* <div className="footer-btn facebook-btn">
                                 <AnimatedButton
                                     classText="footer-btn facebook-btn"
                                     style={styleFb}
                                     trigger={triggerFb}
                                     text=""
                                 />
-                            </div>
+                            </div> */}
                             <div className="footer-btn instagram-btn">
                                 <a href="https://www.instagram.com/favellini_tm/">
                                     <AnimatedButton
@@ -43,7 +43,7 @@ const Footer = (props: Props) => {
                     </div>
                     <form
                         className="form"
-                        action="https://formsubmit.co/romankoriachko@gmail.com"
+                        action="https://formsubmit.co/kate.gorushenko@gmail.com"
                         method="POST"
                     >
                         <div className="form-wrapper">
@@ -71,14 +71,14 @@ const Footer = (props: Props) => {
                         </div>
                     </form>
                     <div className="row footer-buttons-row-tablet">
-                        <div className="footer-btn facebook-btn">
+                        {/* <div className="footer-btn facebook-btn">
                             <AnimatedButton
                                 classText="footer-btn facebook-btn"
                                 style={styleFb}
                                 trigger={triggerFb}
                                 text=""
                             />
-                        </div>
+                        </div> */}
                         <div className="footer-btn instagram-btn">
                             <a href="https://www.instagram.com/favellini_tm/">
                                 <AnimatedButton
