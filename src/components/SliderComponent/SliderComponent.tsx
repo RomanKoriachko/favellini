@@ -36,6 +36,14 @@ const SliderComponent = (props: Props) => {
     const settings1: Settings = {
         asNavFor: slider2.current || undefined,
         dots: true,
+        responsive: [
+            {
+                breakpoint: 576,
+                settings: {
+                    arrows: false,
+                },
+            },
+        ],
     };
 
     const settings2: Settings = {
@@ -48,6 +56,7 @@ const SliderComponent = (props: Props) => {
                 breakpoint: 576,
                 settings: {
                     slidesToShow: 2,
+                    arrows: false,
                 },
             },
         ],
