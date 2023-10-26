@@ -9,6 +9,8 @@ import Main from "./container/Main/Main";
 import App from "./container/App/App";
 import ItemPage from "./pages/ItemPage/ItemPage";
 import { HelmetProvider } from "react-helmet-async";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 
 const router = createBrowserRouter([
     {
@@ -37,9 +39,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <React.StrictMode>
-        <HelmetProvider>
-            <RouterProvider router={router} />
-        </HelmetProvider>
+        <Provider store={store}>
+            <HelmetProvider>
+                <RouterProvider router={router} />
+            </HelmetProvider>
+        </Provider>
     </React.StrictMode>
 );
 

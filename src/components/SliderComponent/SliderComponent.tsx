@@ -3,22 +3,9 @@ import { useParams } from "react-router-dom";
 import Slider, { Settings } from "react-slick";
 import itemsArray from "../../pages/CollectionPage/itemsArray";
 import "./SliderComponent.scss";
+import { ItemType } from "../../redux/itemsReducer";
 
 type Props = {};
-
-export type ItemType = {
-    id: number;
-    type: string;
-    kingSize: boolean;
-    queenSize: boolean;
-    color: string;
-    queensPrice: number;
-    kingsPrice: number;
-    img1: string;
-    img2: string;
-    img3: string;
-    img4: string;
-};
 
 const SliderComponent = (props: Props) => {
     const { color } = useParams();
@@ -34,6 +21,8 @@ const SliderComponent = (props: Props) => {
         img2: "",
         img3: "",
         img4: "",
+        popularity: 0,
+        inStock: false,
     };
     for (let i = 0; i < itemsArray.length; i++) {
         if (itemsArray[i].color === color) {

@@ -3,12 +3,11 @@ import "./ItemPage.scss";
 import HistoryComponent from "../../components/HistoryComponent/HistoryComponent";
 import PagesNavigation from "../../components/PagesNavigation/PagesNavigation";
 import itemsArray from "../CollectionPage/itemsArray";
-import SliderComponent, {
-    ItemType,
-} from "../../components/SliderComponent/SliderComponent";
+import SliderComponent from "../../components/SliderComponent/SliderComponent";
 import { useState } from "react";
 import PakingComponent from "../../components/PakingComponent/PakingComponent";
 import { Helmet } from "react-helmet-async";
+import { ItemType } from "../../redux/itemsReducer";
 
 type Props = {};
 
@@ -28,6 +27,8 @@ const ItemPage = (props: Props) => {
         img2: "",
         img3: "",
         img4: "",
+        popularity: 0,
+        inStock: false,
     };
     for (let i = 0; i < itemsArray.length; i++) {
         if (itemsArray[i].color === color) {
