@@ -5,7 +5,7 @@ import AnimatedButton from "../../components/AnimatedButton/AnimatedButton";
 type Props = {};
 
 const Footer = (props: Props) => {
-    const [styleFb, triggerFb] = useBoop({ rotation: 20 });
+    // const [styleFb, triggerFb] = useBoop({ rotation: 20 });
     const [styleInst, triggerInst] = useBoop({ rotation: 20 });
     const [styleForm, triggerForm] = useBoop({ scale: 1.1 });
     return (
