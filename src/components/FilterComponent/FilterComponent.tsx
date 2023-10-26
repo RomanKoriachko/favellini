@@ -65,6 +65,8 @@ const FilterComponent = (props: Props) => {
     const [localQueenChecked, setLocalQueenChecked] = useState(false);
     const [localKingChecked, setLocalKingChecked] = useState(false);
 
+    console.log(localQueenChecked);
+
     const handleQueenCheckboxChange = (
         event: React.ChangeEvent<HTMLInputElement>
     ) => {
