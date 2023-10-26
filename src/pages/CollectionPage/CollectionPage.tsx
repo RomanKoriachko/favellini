@@ -70,13 +70,16 @@ const CollectionPage = (props: Props) => {
     const onTabletFilterClick = () => {
         if (tabletFilterState === "") {
             dispatch(openTabletFilterState());
+            document.body.style.overflow = "hidden";
         } else {
             dispatch(closeTabletFilterState());
+            document.body.style.overflow = "auto";
         }
     };
 
     const closeTabletFilter = () => {
         dispatch(closeTabletFilterState());
+        document.body.style.overflow = "auto";
     };
 
     const onTabletSortingClick = () => {

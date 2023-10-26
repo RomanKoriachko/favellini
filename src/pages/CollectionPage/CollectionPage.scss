@@ -96,6 +96,7 @@
             top: 0px;
             left: -110%;
             width: 100%;
+            height: fit-content;
             background: white;
             padding: 16px;
             padding-top: 0;
@@ -157,7 +158,16 @@
                 }
             }
         }
-        .open {
+        .filter-tablet.open {
+            left: 0px;
+            height: 100vh;
+            max-height: 100vh;
+            overflow-y: scroll;
+        }
+        .sorting-tablet.open {
+            left: 0px;
+        }
+        .tablet-filter-bg.open {
             left: 0px;
         }
     }

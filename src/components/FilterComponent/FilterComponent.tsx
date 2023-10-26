@@ -40,6 +40,7 @@ const FilterComponent = (props: Props) => {
     const handleChangeCaterogy = (category: string) => {
         setCategoriesState(category);
         onClearAllFiltersClick();
+        document.body.style.overflow = "auto";
 
         let filteredItems = [...itemsArray];
 
@@ -318,6 +319,7 @@ const FilterComponent = (props: Props) => {
             });
         }
 
+        document.body.style.overflow = "auto";
         dispatch(setItemsState(filteredItems));
     };
 
@@ -510,6 +512,8 @@ const FilterComponent = (props: Props) => {
         } else {
             dispatch(setItemsState(filteredItems));
         }
+
+        document.body.style.overflow = "auto";
     };
 
     const colorsObj = [
