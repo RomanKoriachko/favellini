@@ -154,6 +154,7 @@ const ItemPage = (props: Props) => {
                             <a
                                 href="https://www.amazon.com/FAVELLINI-Symphony-Nature-Organically-Viscose/dp/B0CNLCNLRQ?ref_=ast_sto_dp"
                                 target="_blank"
+                                rel="noreferrer"
                             >
                                 <button className="shop-btn">
                                     let's go to the store
