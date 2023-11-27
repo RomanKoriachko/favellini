@@ -77,6 +77,32 @@ const ItemPage = (props: Props) => {
             : setDropdownMaterialsState("");
     };
 
+    // Color choice
+
+    const [colorChoiseState, setColorChoiseState] = useState<string>("king");
+    const [isCheckedSize, setIsChechedSize] = useState<{
+        queen: string;
+        king: string;
+    }>({
+        queen: "",
+        king: "checked",
+    });
+
+    const setQueenSize = () => {
+        setColorChoiseState("queen");
+        setIsChechedSize({
+            queen: "checked",
+            king: "",
+        });
+    };
+    const setKingSize = () => {
+        setColorChoiseState("king");
+        setIsChechedSize({
+            queen: "",
+            king: "checked",
+        });
+    };
+
     return (
         <main className="main">
             <Helmet>
@@ -102,20 +128,44 @@ const ItemPage = (props: Props) => {
                                         {currentItem.type}
                                     </p>
                                 </div>
-                                <p className="item-title second-item-title">
+                                <div className="item-title second-item-title">
+                                    <div className="discount-price">97€</div>
+                                    <div className="crossing-line"></div>
                                     <span>from</span> {currentItem.queensPrice}€
-                                </p>
+                                </div>
                             </div>
                             <p className="item-text">Sizes:</p>
                             <div className="row sizes-row">
-                                <p className="item-price">
-                                    {currentItem.queensPrice}€{" "}
-                                    <span>Queen size</span>
-                                </p>
-                                <p className="item-price">
-                                    {currentItem.kingsPrice}€{" "}
-                                    <span>King size</span>
-                                </p>
+                                <div className="size-choising row">
+                                    <div
+                                        className={`check-size ${isCheckedSize.queen}`}
+                                    ></div>
+                                    <div className="item-price">
+                                        <div className="discount-price">
+                                            97€
+                                        </div>
+                                        <div className="crossing-line"></div>
+                                        {currentItem.queensPrice}€{" "}
+                                        <span onClick={setQueenSize}>
+                                            Queen size
+                                        </span>
+                                    </div>
+                                </div>
+                                <div className="size-choising row">
+                                    <div
+                                        className={`check-size ${isCheckedSize.king}`}
+                                    ></div>
+                                    <div className="item-price">
+                                        <div className="discount-price">
+                                            117€
+                                        </div>
+                                        <div className="crossing-line"></div>
+                                        {currentItem.kingsPrice}€{" "}
+                                        <span onClick={setKingSize}>
+                                            King size
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
                             <div className="row dropdown-title-row">
                                 <p className="dropdown-title">Choose a color</p>
@@ -125,7 +175,6 @@ const ItemPage = (props: Props) => {
                                     monitor settings.
                                 </p>
                             </div>
-
                             <div className="dropdown-menu">
                                 <div
                                     className="current-item row"
@@ -151,15 +200,21 @@ const ItemPage = (props: Props) => {
                                     ))}
                                 </div>
                             </div>
-                            <a
-                                href="https://www.amazon.com/FAVELLINI-Symphony-Nature-Organically-Viscose/dp/B0CNLCNLRQ?ref_=ast_sto_dp"
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                <button className="shop-btn">
-                                    let's go to the store
-                                </button>
-                            </a>
+
+                            {colorChoiseState === "king" ? (
+                                <a
+                                    href="https://www.amazon.com/FAVELLINI-Symphony-Nature-Organically-Viscose/dp/B0CNLCNLRQ?ref_=ast_sto_dp"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    <button className="shop-btn">
+                                        let's go to the store
+                                    </button>
+                                </a>
+                            ) : (
+                                <div className="disable-btn">out of stock</div>
+                            )}
+
                             <div className="product-description-block">
                                 <div
                                     onClick={openDescriptionDropdown}

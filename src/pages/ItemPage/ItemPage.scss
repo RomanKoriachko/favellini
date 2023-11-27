@@ -12,6 +12,25 @@
                 justify-content: space-between;
                 margin-bottom: 40px;
             }
+            .second-item-title {
+                position: relative;
+                .discount-price {
+                    color: #fd2121;
+                    font-size: 40px;
+                    font-weight: 500;
+                    line-height: 47px;
+                    text-align: right;
+                }
+                .crossing-line {
+                    position: absolute;
+                    top: 63px;
+                    right: 0px;
+                    height: 3px;
+                    width: 75px;
+                    background-color: #fd2121;
+                    transform: rotate(7deg);
+                }
+            }
             .item-title {
                 font-size: 32px;
                 font-weight: 500;
@@ -39,16 +58,46 @@
                 margin-bottom: 21px;
             }
             .sizes-row {
-                width: 50%;
+                width: 60%;
                 justify-content: space-between;
                 margin-bottom: 24px;
+                .size-choising {
+                    align-items: flex-end;
+                    gap: 5px;
+                    .check-size {
+                        width: 24px;
+                        height: 24px;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                    }
+                    .checked {
+                        background-image: url(../../assets/check-size.svg);
+                    }
+                }
                 .item-price {
                     font-size: 16px;
                     font-weight: 400;
                     line-height: 19px;
                     letter-spacing: 0em;
+                    position: relative;
+                    .discount-price {
+                        font-size: 24px;
+                        font-weight: 500;
+                        line-height: 28px;
+                        color: #fd2121;
+                        margin-left: -3px;
+                    }
+                    .crossing-line {
+                        position: absolute;
+                        height: 2px;
+                        width: 36px;
+                        background-color: #fd2121;
+                        top: 35px;
+                        transform: rotate(8deg);
+                    }
                     > span {
                         font-weight: 700;
+                        cursor: pointer;
                     }
                 }
             }
@@ -126,6 +175,23 @@
                 letter-spacing: 0em;
                 text-align: left;
                 color: white;
+                text-transform: capitalize;
+                padding: 13px 0px;
+                text-align: center;
+                cursor: pointer;
+            }
+            .disable-btn {
+                width: 100%;
+                margin-top: 24px;
+                margin-bottom: 28px;
+                background-color: #fafafa;
+                border: none;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 22px;
+                letter-spacing: 0em;
+                text-align: left;
+                color: #333333;
                 text-transform: capitalize;
                 padding: 13px 0px;
                 text-align: center;
