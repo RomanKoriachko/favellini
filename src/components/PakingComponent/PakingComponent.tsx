@@ -27,11 +27,14 @@ const PakingComponent = (props: Props) => {
                         This box is convenient for storing laundry at home.
                     </p>
                 </div>
-                <img
-                    className="paking-img-2"
-                    src="/images/innovation-img-2.jpg"
-                    alt=""
-                />
+                <div className="paking-img-2-wrapper">
+                    <img
+                        className="paking-img-2"
+                        src="/images/innovation-img-2.jpg"
+                        alt=""
+                    />
+                    <div className="cetrificate-wrapper"></div>
+                </div>
             </div>
         </section>
     );

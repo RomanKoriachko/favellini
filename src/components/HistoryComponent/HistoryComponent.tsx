@@ -37,6 +37,7 @@ const HistoryComponent = (props: Props) => {
                             src="/images/history-section-img.jpg"
                             alt=""
                         />
+                        <div className="certificate-wrapper"></div>
                     </div>
                 </AnimationOnScroll>
             </div>

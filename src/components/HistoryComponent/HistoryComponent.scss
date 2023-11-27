@@ -22,6 +22,17 @@
     .history-img-wrapper {
         display: grid;
         justify-content: flex-end;
+        position: relative;
+        .certificate-wrapper {
+            position: absolute;
+            top: 14px;
+            right: 17px;
+            height: 60px;
+            width: 40px;
+            background-image: url(../../assets/certificate.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
     }
 }
 

@@ -223,6 +223,17 @@
         margin-bottom: 60px;
         margin-left: 100px;
         margin-right: 100px;
+        position: relative;
+        .certificate-wrapper {
+            width: 40px;
+            height: 60px;
+            background-image: url(../../assets/certificate.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 30px;
+            right: 23px;
+        }
         .care-title {
             text-transform: uppercase;
             font-family: "Lora", serif;
@@ -361,6 +372,9 @@
             margin-left: 0px;
             margin-right: 0px;
             padding: 40px 50px;
+            .certificate-wrapper {
+                right: 10px;
+            }
             .care-title {
                 line-height: 46px;
             }
@@ -421,6 +435,9 @@
         .care-wrapper {
             padding: 23px 11px;
             margin-bottom: 17px;
+            .certificate-wrapper {
+                display: none;
+            }
             .care-title {
                 font-size: 20px;
                 line-height: 30px;

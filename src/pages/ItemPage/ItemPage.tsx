@@ -320,6 +320,7 @@ const ItemPage = (props: Props) => {
                         </div>
                     </div>
                     <div className="care-wrapper">
+                        <div className="certificate-wrapper"></div>
                         <p className="care-title">
                             care and cleaning instructions
                         </p>

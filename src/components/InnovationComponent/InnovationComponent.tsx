@@ -63,6 +63,7 @@ const InnovationComponent = (props: Props) => {
                         </div>
                         <div className="img-wrapper">
                             <img src="images/innovation-img-2.jpg" alt="" />
+                            <div className="certificate-wrapper"></div>
                         </div>
 
                         <Link
