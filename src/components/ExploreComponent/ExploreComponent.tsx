@@ -52,8 +52,9 @@ const ExploreComponent = (props: Props) => {
                         </Link>
                     </div>
                     <a
-                        href="https://www.google.com.ua/?hl=uk"
+                        href="https://www.amazon.com/stores/FAVELLINI/page/1A0380A7-DFAD-4C65-B77A-F24D55333BC2?ref_=ast_bln"
                         className="store-link"
+                        target="_blank"
                     >
                         <button className="explore-section-item explore-section-link">
                             <p>our store</p>
