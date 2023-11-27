@@ -42,7 +42,7 @@ const Header = (props: Props) => {
             <header className={`header ${headerClass}`}>
                 <div className="container">
                     <div className="header-wrapper">
-                        <Link to="/">
+                        <Link to="/" onClick={closeBurgerMenu}>
                             <img
                                 className="header-logo"
                                 src={`/images/${headerLogo}`}

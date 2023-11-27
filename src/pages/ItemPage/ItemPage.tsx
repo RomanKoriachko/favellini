@@ -315,6 +315,106 @@ const ItemPage = (props: Props) => {
                             </div>
                         </div>
                     </div>
+                    <div className="care-wrapper">
+                        <p className="care-title">
+                            care and cleaning instructions
+                        </p>
+                        <div className="care-icons row">
+                            <div className="care-icons-item care-icons-item-1">
+                                <div className="care-icon care-icon-1"></div>
+                                <p>Organic</p>
+                            </div>
+                            <div className="care-icons-item care-icons-item-2">
+                                <div className="care-icon care-icon-2"></div>
+                                <p>cooling</p>
+                            </div>
+                            <div className="care-icons-item care-icons-item-3">
+                                <div className="care-icon care-icon-3"></div>
+                                <p>breathable</p>
+                            </div>
+                            <div className="care-icons-item care-icons-item-4">
+                                <div className="care-icon care-icon-4"></div>
+                                <p>300TC</p>
+                            </div>
+                            <div className="care-icons-item care-icons-item-5">
+                                <div className="care-icon care-icon-5"></div>
+                                <p>Double stitch</p>
+                            </div>
+                        </div>
+                        <div className="care-instructions">
+                            <div className="care-instructions-item row">
+                                <div className="care-instructions-img care-instructions-img-1"></div>
+                                <div className="care-instructions-desc">
+                                    <p className="care-instructions-title">
+                                        cold water wash only
+                                    </p>
+                                    <p className="care-instructions-subtitle">
+                                        Machine wash or hand wash in cold water
+                                        only. Never wash in hot water.
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="care-instructions-item row">
+                                <div className="care-instructions-img care-instructions-img-2"></div>
+                                <div className="care-instructions-desc">
+                                    <p className="care-instructions-title">
+                                        do not dry clean
+                                    </p>
+                                    <p className="care-instructions-subtitle">
+                                        Do not dry clean Pure Bamboo bed sheets
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="care-instructions-item row">
+                                <div className="care-instructions-img care-instructions-img-3"></div>
+                                <div className="care-instructions-desc">
+                                    <p className="care-instructions-title">
+                                        No Bleach
+                                    </p>
+                                    <p className="care-instructions-subtitle">
+                                        Bleach will damage Pure Bamboo bed
+                                        sheets
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="care-instructions-item row">
+                                <div className="care-instructions-img care-instructions-img-4"></div>
+                                <div className="care-instructions-desc">
+                                    <p className="care-instructions-title">
+                                        tumble dry low heat
+                                    </p>
+                                    <p className="care-instructions-subtitle">
+                                        Low heat drying only.Remove from dryer
+                                        immediately to avoid wrinkles
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="care-instructions-item row">
+                                <div className="care-instructions-img care-instructions-img-5"></div>
+                                <div className="care-instructions-desc">
+                                    <p className="care-instructions-title">
+                                        dye free detergent
+                                    </p>
+                                    <p className="care-instructions-subtitle">
+                                        Use a laundry pre-treater to remove
+                                        stains
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="care-instructions-item row">
+                                <div className="care-instructions-img care-instructions-img-6"></div>
+                                <div className="care-instructions-desc">
+                                    <p className="care-instructions-title">
+                                        low heat iron only
+                                    </p>
+                                    <p className="care-instructions-subtitle">
+                                        Hight heat ironing will damage Pure
+                                        Bamboo bed sheets
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <HistoryComponent />
                 <PakingComponent />

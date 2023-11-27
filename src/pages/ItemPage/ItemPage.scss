@@ -217,6 +217,103 @@
             }
         }
     }
+    .care-wrapper {
+        padding: 40px 100px;
+        background-color: #f9f5ef;
+        margin-bottom: 60px;
+        margin-left: 100px;
+        margin-right: 100px;
+        .care-title {
+            text-transform: uppercase;
+            font-family: "Lora", serif;
+            font-size: 36px;
+            font-weight: 500;
+            line-height: 36px;
+            letter-spacing: -2px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .care-icons {
+            background-color: #144c45;
+            margin-left: -100px;
+            margin-right: -100px;
+            justify-content: center;
+            gap: 40px;
+            padding: 20px 0px;
+            .care-icons-item {
+                color: white;
+                text-transform: uppercase;
+                font-weight: 700;
+                line-height: 19px;
+                .care-icon {
+                    width: 40px;
+                    height: 40px;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    margin: 0 auto;
+                    margin-bottom: 15px;
+                }
+                .care-icon-1 {
+                    background-image: url(../../assets/care-icon-1.svg);
+                }
+                .care-icon-2 {
+                    background-image: url(../../assets/care-icon-2.svg);
+                }
+                .care-icon-3 {
+                    background-image: url(../../assets/care-icon-3.svg);
+                }
+                .care-icon-4 {
+                    background-image: url(../../assets/care-icon-4.svg);
+                }
+                .care-icon-5 {
+                    background-image: url(../../assets/care-icon-5.svg);
+                }
+            }
+        }
+        .care-instructions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin-top: 40px;
+            gap: 20px;
+            align-items: start;
+            .care-instructions-item {
+                align-items: center;
+                gap: 32px;
+                .care-instructions-img {
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    min-width: 32px;
+                    min-height: 32px;
+                }
+                .care-instructions-img-1 {
+                    background-image: url(../../assets/care-instructions-img-1.svg);
+                }
+                .care-instructions-img-2 {
+                    background-image: url(../../assets/care-instructions-img-2.svg);
+                }
+                .care-instructions-img-3 {
+                    background-image: url(../../assets/care-instructions-img-3.svg);
+                }
+                .care-instructions-img-4 {
+                    background-image: url(../../assets/care-instructions-img-4.svg);
+                }
+                .care-instructions-img-5 {
+                    background-image: url(../../assets/care-instructions-img-5.svg);
+                }
+                .care-instructions-img-6 {
+                    background-image: url(../../assets/care-instructions-img-6.svg);
+                }
+                .care-instructions-title {
+                    font-size: 20px;
+                    line-height: 23px;
+                    text-transform: uppercase;
+                }
+                .care-instructions-subtitle {
+                    line-height: 19px;
+                }
+            }
+        }
+    }
 }
 
 // ------------- Adaptive -------------
@@ -231,6 +328,10 @@
                     width: 65%;
                 }
             }
+        }
+        .care-wrapper {
+            margin-left: 50px;
+            margin-right: 50px;
         }
     }
 }
@@ -256,6 +357,51 @@
                 }
             }
         }
+        .care-wrapper {
+            margin-left: 0px;
+            margin-right: 0px;
+            padding: 40px 50px;
+            .care-title {
+                line-height: 46px;
+            }
+            .care-icons {
+                margin-left: -50px;
+                margin-right: -50px;
+                display: grid;
+                grid-template-columns: repeat(6, 60px);
+                grid-template-rows: 1fr 1fr;
+                justify-items: center;
+                gap: 24px 16px;
+                .care-icons-item {
+                    width: 120px;
+                    text-align: center;
+                }
+                .care-icons-item-1 {
+                    grid-column-start: 1;
+                    grid-column-end: 3;
+                }
+                .care-icons-item-2 {
+                    grid-column-start: 3;
+                    grid-column-end: 5;
+                }
+                .care-icons-item-3 {
+                    grid-column-start: 5;
+                    grid-column-end: 7;
+                }
+                .care-icons-item-4 {
+                    grid-column-start: 2;
+                    grid-column-end: 4;
+                }
+                .care-icons-item-5 {
+                    grid-column-start: 4;
+                    grid-column-end: 6;
+                }
+            }
+            .care-instructions {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+        }
     }
 }
 
@@ -268,6 +414,57 @@
                     align-items: flex-end;
                     .second-item-title {
                         margin-bottom: 0;
+                    }
+                }
+            }
+        }
+        .care-wrapper {
+            padding: 23px 11px;
+            margin-bottom: 17px;
+            .care-title {
+                font-size: 20px;
+                line-height: 30px;
+                margin-bottom: 21px;
+            }
+            .care-icons {
+                margin-left: -11px;
+                margin-right: -11px;
+                padding: 48px 0px 42px;
+                grid-template-columns: 0px repeat(4, 60px) 0px;
+                gap: 24px 10px;
+                .care-icons-item {
+                    text-align: center;
+                }
+                .care-icons-item-1 {
+                    order: 1;
+                }
+                .care-icons-item-2 {
+                    order: 3;
+                    grid-column-start: 5;
+                    grid-column-end: 7;
+                }
+                .care-icons-item-3 {
+                    order: 5;
+                    grid-column-start: 4;
+                    grid-column-end: 6;
+                }
+                .care-icons-item-4 {
+                    order: 2;
+                    grid-column-start: 3;
+                    grid-column-end: 5;
+                }
+                .care-icons-item-5 {
+                    order: 4;
+                    grid-column-start: 2;
+                    grid-column-end: 4;
+                }
+            }
+            .care-instructions {
+                .care-instructions-item {
+                    .care-instructions-img {
+                        min-width: 44px;
+                        min-height: 44px;
+                        background-size: cover;
                     }
                 }
             }
