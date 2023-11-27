@@ -6,6 +6,7 @@ type Props = {};
 
 const Footer = (props: Props) => {
     // const [styleFb, triggerFb] = useBoop({ rotation: 20 });
+    const [styleAm, triggerAm] = useBoop({ rotation: 20 });
     const [styleInst, triggerInst] = useBoop({ rotation: 20 });
     const [styleForm, triggerForm] = useBoop({ scale: 1.1 });
     return (
@@ -29,8 +30,26 @@ const Footer = (props: Props) => {
                                     text=""
                                 />
                             </div> */}
+                            <div className="footer-btn amazon-btn">
+                                <a
+                                    href="https://www.amazon.com/stores/FAVELLINI/page/1A0380A7-DFAD-4C65-B77A-F24D55333BC2?ref_=ast_bln"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    <AnimatedButton
+                                        classText="footer-btn amazon-btn"
+                                        style={styleAm}
+                                        trigger={triggerAm}
+                                        text=""
+                                    />
+                                </a>
+                            </div>
                             <div className="footer-btn instagram-btn">
-                                <a href="https://www.instagram.com/favellini_tm/">
+                                <a
+                                    href="https://www.instagram.com/favellini_tm/"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
                                     <AnimatedButton
                                         classText="footer-btn instagram-btn"
                                         style={styleInst}
@@ -71,14 +90,14 @@ const Footer = (props: Props) => {
                         </div>
                     </form>
                     <div className="row footer-buttons-row-tablet">
-                        {/* <div className="footer-btn facebook-btn">
+                        <div className="footer-btn amazon-btn">
                             <AnimatedButton
-                                classText="footer-btn facebook-btn"
-                                style={styleFb}
-                                trigger={triggerFb}
+                                classText="footer-btn amazon-btn"
+                                style={styleAm}
+                                trigger={triggerAm}
                                 text=""
                             />
-                        </div> */}
+                        </div>
                         <div className="footer-btn instagram-btn">
                             <a href="https://www.instagram.com/favellini_tm/">
                                 <AnimatedButton

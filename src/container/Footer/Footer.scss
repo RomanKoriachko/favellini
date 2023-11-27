@@ -54,6 +54,10 @@
         background-size: 20%;
         margin-right: 12px;
     }
+    .amazon-btn {
+        background-image: url(../../assets/amazon.svg);
+        margin-right: 12px;
+    }
     .instagram-btn {
         background-image: url(../../assets/instagram.svg);
         background-size: 30%;
@@ -99,7 +103,6 @@
                 font-weight: 700;
                 line-height: 20px;
                 letter-spacing: 0em;
-
                 width: 100px;
                 border: none;
                 border-radius: 4px;
