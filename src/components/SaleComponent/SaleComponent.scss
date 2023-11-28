@@ -1,0 +1,176 @@
+.sale-section {
+    padding-top: 100px;
+    padding-bottom: 40px;
+    background-color: #8acfcf;
+    .sale-title-wrapper {
+        gap: 70px;
+        margin-bottom: 70px;
+        .sale-title {
+            min-width: 400px;
+        }
+        .sale-red {
+            font-family: "Allison", cursive;
+            font-size: 228px;
+            font-weight: 400;
+            line-height: 32px;
+            color: #fd2121;
+        }
+        .sale-persents {
+            font-family: "Lora", serif;
+            font-size: 96px;
+            font-weight: 400;
+            line-height: 64px;
+            letter-spacing: -2px;
+            text-align: right;
+            position: relative;
+            width: fit-content;
+            bottom: -30px;
+            right: -205px;
+        }
+    }
+    .sale-description {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 32px;
+    }
+    .marquee {
+        overflow: hidden;
+        .marquee-item {
+            margin-right: 40px;
+            margin-bottom: 20px;
+            .marquee-img {
+                box-shadow: 0px 4px 8px 0px #2799a466;
+                > img {
+                    margin-bottom: -4px;
+                }
+            }
+            .marquee-item-description-row {
+                margin-top: 30px;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .marquee-item-color {
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 23px;
+            }
+            .marquee-item-type {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 19px;
+                color: #ffffff;
+                text-transform: capitalize;
+            }
+            .marquee-item-price-and-btn {
+                gap: 24px;
+                align-items: center;
+                .marquee-item-price {
+                    font-size: 20px;
+                    font-weight: 400;
+                    line-height: 23px;
+                    > span {
+                        color: #fd2121;
+                        font-size: 42px;
+                    }
+                }
+                .marquee-item-button {
+                    text-transform: capitalize;
+                    color: #22625a;
+                    font-family: "Lora", serif;
+                    font-weight: 600;
+                    line-height: 20px;
+                    border: none;
+                    border-radius: 4px;
+                    background-color: white;
+                    box-shadow: 3px 4px 6px 0px #2799a44d;
+                    padding: 12px 27px;
+                    cursor: pointer;
+                }
+            }
+        }
+        .mobile-btn {
+            display: none;
+            margin-top: 10px;
+            > button {
+                text-transform: capitalize;
+                color: #22625a;
+                font-family: "Lora", serif;
+                font-weight: 600;
+                line-height: 20px;
+                border: none;
+                border-radius: 4px;
+                background-color: white;
+                box-shadow: 3px 4px 6px 0px #2799a44d;
+                padding: 12px 27px;
+                cursor: pointer;
+                width: 100%;
+            }
+        }
+    }
+}
+
+// ------------- Adaptive -------------
+
+// ------------- Tablet -------------
+@media (max-width: 992px) {
+    .sale-section {
+        .sale-title-wrapper {
+            flex-direction: column;
+            margin-bottom: 40px;
+        }
+        .marquee {
+            .marquee-item {
+                max-width: 450px;
+                .marquee-img {
+                    > img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ------------- Mobile -------------
+@media (max-width: 576px) {
+    .sale-section {
+        padding-top: 60px;
+        padding-bottom: 20px;
+        .sale-title-wrapper {
+            gap: 16px;
+            .sale-title {
+                min-width: auto;
+            }
+            .sale-red {
+                font-size: 162px;
+            }
+            .sale-persents {
+                font-size: 74px;
+                bottom: -7px;
+                right: -153px;
+            }
+        }
+        .marquee {
+            .marquee-item {
+                max-width: 300px;
+                .marquee-item-description-row {
+                    gap: 16px;
+                    margin-top: 16px;
+                }
+                .marquee-item-price-and-btn {
+                    .marquee-item-price {
+                        > span {
+                            font-size: 32px;
+                        }
+                    }
+                    .marquee-item-button {
+                        display: none;
+                    }
+                }
+            }
+            .mobile-btn {
+                display: block;
+            }
+        }
+    }
+}

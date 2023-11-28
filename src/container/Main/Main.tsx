@@ -3,6 +3,7 @@ import ExploreComponent from "../../components/ExploreComponent/ExploreComponent
 import FeedbackComponent from "../../components/FeedbackComponent/FeedbackComponent";
 import HistoryComponent from "../../components/HistoryComponent/HistoryComponent";
 import InnovationComponent from "../../components/InnovationComponent/InnovationComponent";
+import SaleComponent from "../../components/SaleComponent/SaleComponent";
 import VideoComponent from "../../components/VideoComponent/VideoComponent";
 import "./Main.scss";
 import { Helmet } from "react-helmet-async";
@@ -36,6 +37,7 @@ const Main = (props: Props) => {
             </Helmet>
             <VideoComponent />
             <AboutComponent />
+            <SaleComponent />
             <ExploreComponent />
             <HistoryComponent />
             <InnovationComponent />

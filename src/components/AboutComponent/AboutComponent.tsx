@@ -60,30 +60,6 @@ const AboutComponent = (props: Props) => {
                     />
                 </div>
             </AnimationOnScroll>
-            <div className="container">
-                <div className="row description-wrapper">
-                    <div className="description-leftside-wrapper">
-                        <p className="description-title">100%</p>
-                        <p className="description-text">organically </p>
-                    </div>
-                    <div className="description-text-wrapper">
-                        <p className="text">
-                            At Favellini, perfection is our constant pursuit. We
-                            meticulously choose materials, focusing on 100%
-                            organically grown bamboo viscose, known for its
-                            unparalleled softness and eco-friendliness. Each
-                            thread is selected with precision, and every stitch
-                            reflects our dedication to quality.
-                        </p>
-                        <p className="text">
-                            Our bedding collection transcends ordinary comfort.
-                            It’s not just fabric; it’s an indulgence for the
-                            senses, with a velvety texture that caresses your
-                            skin, making every night’s sleep a regal experience.
-                        </p>
-                    </div>
-                </div>
-            </div>
         </section>
     );
 };

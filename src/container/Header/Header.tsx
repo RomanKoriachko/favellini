@@ -89,6 +89,16 @@ const Header = (props: Props) => {
                                     </LinkNav>
                                 </div>
                             </div>
+                            <LinkNav
+                                to="sale"
+                                smooth={true}
+                                duration={500}
+                                onClick={closeBurgerMenu}
+                            >
+                                <div className="header-menu-item sale-item">
+                                    SALE
+                                </div>
+                            </LinkNav>
                             <Link
                                 className="header-menu-item"
                                 to={"collection"}
