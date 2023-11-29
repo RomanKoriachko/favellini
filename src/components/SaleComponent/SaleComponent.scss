@@ -1,109 +1,137 @@
 .sale-section {
-    padding-top: 100px;
-    padding-bottom: 40px;
-    background-color: #8acfcf;
-    .sale-title-wrapper {
-        gap: 70px;
-        margin-bottom: 70px;
-        .sale-title {
-            min-width: 400px;
-        }
-        .sale-red {
-            font-family: "Allison", cursive;
-            font-size: 228px;
-            font-weight: 400;
-            line-height: 32px;
-            color: #fd2121;
-        }
-        .sale-persents {
-            font-family: "Lora", serif;
-            font-size: 96px;
-            font-weight: 400;
-            line-height: 64px;
-            letter-spacing: -2px;
-            text-align: right;
-            position: relative;
-            width: fit-content;
-            bottom: -30px;
-            right: -205px;
-        }
-    }
-    .sale-description {
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 32px;
-    }
-    .marquee {
+    padding-top: 20px;
+    .sale-wrapper {
+        padding: 46px 72px;
+        background-color: #8acfcf;
+        border-radius: 40px;
         overflow: hidden;
-        .marquee-item {
-            margin-right: 40px;
-            margin-bottom: 20px;
-            .marquee-img {
-                box-shadow: 0px 4px 8px 0px #2799a466;
-                > img {
+        gap: 16px;
+        position: relative;
+        justify-content: end;
+        .sale-title {
+            position: absolute;
+            top: 90px;
+            left: -40px;
+            z-index: 1;
+            > p:nth-child(1) {
+                font-family: "Allison", cursive;
+                font-size: 428px;
+                font-weight: 400;
+                line-height: 32px;
+                color: #fd2121;
+            }
+            > p:nth-child(2) {
+                font-family: "Lora", serif;
+                font-size: 32px;
+                font-weight: 700;
+                line-height: 64px;
+                letter-spacing: -2px;
+                text-transform: uppercase;
+                position: relative;
+                top: 200px;
+                right: -100px;
+                > span {
+                    font-family: Lora;
+                    font-size: 96px;
+                    font-weight: 400;
+                    line-height: 64px;
+                    letter-spacing: -2px;
+                }
+            }
+            > p:nth-child(3) {
+                font-family: "Allison", cursive;
+                font-size: 328px;
+                font-weight: 400;
+                line-height: 32px;
+                color: #fd2121;
+                opacity: 0.1;
+                position: relative;
+                bottom: -120px;
+                right: -185px;
+            }
+        }
+        .sale-text {
+            font-size: 18px;
+            line-height: 32px;
+            width: 305px;
+            z-index: 2;
+            position: relative;
+            height: fit-content;
+            .sale-text-blur {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+                background-color: #8acfcf9d;
+                filter: blur(8px);
+            }
+            > p {
+                padding: 10px;
+                border-radius: 8px;
+                z-index: 10;
+                position: relative;
+            }
+        }
+        .sale-item {
+            z-index: 2;
+            .sale-img-wrapper {
+                width: 440px;
+                box-shadow: 0px 4px 8px 0px #279aa4a6;
+                border-radius: 4px;
+                overflow: hidden;
+                margin-bottom: 18px;
+                .sale-img {
+                    width: 100%;
                     margin-bottom: -4px;
                 }
             }
-            .marquee-item-description-row {
-                margin-top: 30px;
-                justify-content: space-between;
-                align-items: center;
-            }
-            .marquee-item-color {
+            .sale-item-color {
                 font-size: 20px;
                 font-weight: 500;
                 line-height: 23px;
             }
-            .marquee-item-type {
-                font-size: 16px;
+            .sale-item-type {
                 font-weight: 500;
                 line-height: 19px;
-                color: #ffffff;
+                color: white;
                 text-transform: capitalize;
             }
-            .marquee-item-price-and-btn {
-                gap: 24px;
+            .sale-item-description {
+                justify-content: space-between;
+            }
+            .sale-item-price-and-btn {
                 align-items: center;
-                .marquee-item-price {
-                    font-size: 20px;
-                    font-weight: 400;
-                    line-height: 23px;
-                    > span {
-                        color: #fd2121;
-                        font-size: 42px;
-                    }
-                }
-                .marquee-item-button {
-                    text-transform: capitalize;
-                    color: #22625a;
-                    font-family: "Lora", serif;
-                    font-weight: 600;
-                    line-height: 20px;
-                    border: none;
-                    border-radius: 4px;
-                    background-color: white;
-                    box-shadow: 3px 4px 6px 0px #2799a44d;
-                    padding: 12px 27px;
-                    cursor: pointer;
+                gap: 16px;
+            }
+            .sale-item-rpice {
+                font-size: 20px;
+                font-weight: 400;
+                line-height: 23px;
+                span {
+                    color: #fd2121;
+                    font-size: 42px;
                 }
             }
-        }
-        .mobile-btn {
-            display: none;
-            margin-top: 10px;
-            > button {
-                text-transform: capitalize;
+            .sale-btn,
+            .sale-tablet-btn {
+                box-shadow: 3px 4px 6px 0px #2799a44d;
                 color: #22625a;
                 font-family: "Lora", serif;
                 font-weight: 600;
                 line-height: 20px;
+                background-color: white;
                 border: none;
                 border-radius: 4px;
-                background-color: white;
-                box-shadow: 3px 4px 6px 0px #2799a44d;
-                padding: 12px 27px;
+                padding: 12px 13px;
                 cursor: pointer;
-                width: 100%;
+            }
+            > a {
+                text-decoration: none;
+                color: #22625a;
+            }
+            .sale-tablet-btn {
+                display: none;
             }
         }
     }
@@ -112,19 +140,44 @@
 // ------------- Adaptive -------------
 
 // ------------- Tablet -------------
+@media (max-width: 1100px) {
+    .sale-section {
+        .sale-wrapper {
+            flex-direction: column;
+            .sale-title {
+                position: static;
+                height: 370px;
+                margin-top: 50px;
+                > p:nth-child(2) {
+                    top: 110px;
+                }
+            }
+            .sale-text {
+                width: 100%;
+            }
+            .sale-item {
+                .sale-img-wrapper {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
 @media (max-width: 992px) {
     .sale-section {
-        .sale-title-wrapper {
-            flex-direction: column;
-            margin-bottom: 40px;
-        }
-        .marquee {
-            .marquee-item {
-                max-width: 450px;
-                .marquee-img {
-                    > img {
-                        width: 100%;
-                    }
+        .sale-wrapper {
+            .sale-title {
+                margin-left: -120px;
+            }
+            .sale-item {
+                .sale-btn {
+                    display: none;
+                }
+                .sale-tablet-btn {
+                    display: block;
+                    width: 100%;
+                    margin-top: 8px;
                 }
             }
         }
@@ -134,42 +187,34 @@
 // ------------- Mobile -------------
 @media (max-width: 576px) {
     .sale-section {
-        padding-top: 60px;
-        padding-bottom: 20px;
-        .sale-title-wrapper {
-            gap: 16px;
+        .sale-wrapper {
+            padding: 15px 13px;
+            border-radius: 10px;
             .sale-title {
-                min-width: auto;
-            }
-            .sale-red {
-                font-size: 162px;
-            }
-            .sale-persents {
-                font-size: 74px;
-                bottom: -7px;
-                right: -153px;
-            }
-        }
-        .marquee {
-            .marquee-item {
-                max-width: 300px;
-                .marquee-item-description-row {
-                    gap: 16px;
-                    margin-top: 16px;
+                margin-top: 20px;
+                height: 210px;
+                margin-left: -35px;
+                > p:nth-child(1) {
+                    font-size: 228px;
                 }
-                .marquee-item-price-and-btn {
-                    .marquee-item-price {
-                        > span {
-                            font-size: 32px;
-                        }
-                    }
-                    .marquee-item-button {
-                        display: none;
+                > p:nth-child(2) {
+                    font-size: 32px;
+                    top: 30px;
+                    right: -55px;
+                    > span {
+                        font-size: 64px;
                     }
                 }
+                > p:nth-child(3) {
+                    font-size: 228px;
+                    bottom: -10px;
+                    right: -120px;
+                }
             }
-            .mobile-btn {
-                display: block;
+            .sale-text {
+                > p {
+                    padding: 0px;
+                }
             }
         }
     }
